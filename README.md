@@ -38,7 +38,7 @@ curl -#LO https://github.com/Sochamroun/Termux-EasySetup/raw/refs/heads/main/van
 * paper 1.21.11
 * note: cd folder 📁 server
 ```bash
-curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-In-Android-/releases/download/paper-1.21.11-plugins/plugins.zip && unzip -o plugins.zip && rm -f plugins.zip
+curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/paper-1.21.11-plugins/plugins.zip && unzip -o plugins.zip && rm -f plugins.zip
 ```
 * AutoShutdown Plugins
 ```bash
