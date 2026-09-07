@@ -77,7 +77,7 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Termux-EasySetup/refs/hea
 curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/One_Chunk_1.21%2B/one.block.1.21+.zip && unzip -o one.block.1.21+.zip && rm -f one.block.1.21+.zip
 ```
 <div align="center">
-    <p><b> Prepared by Sochamroun </b></p>
-    <p><b>If this project helps you, please give it a Stars ⭐</b></p>
-    <p><b>*Last updated: 2-9-2026*</b></p>
+    <p><b>សរសេរដោយ សុចំរើន </b></p>
+    <p><b>បើ project នេះជួយដល់អ្នក សូមផ្ដល់ផ្កាយឲ្យខ្ញុំមួយមក ⭐</b></p>
+    <p><b>*Last updated: 7-9-2026*</b></p>
 </div>
