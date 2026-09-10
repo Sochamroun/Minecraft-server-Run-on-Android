@@ -56,6 +56,8 @@ ___
 curl -#LO https://github.com/playit-cloud/playit-minecraft-plugin/releases/latest/download/playit-minecraft-plugin.jar
 ```
 ---
+## Minecraft Seed 
+* -2382543636292059009 
 ## Bot mineflayer 
 * Script Install
 * Name ZinProMax Offline Account 
