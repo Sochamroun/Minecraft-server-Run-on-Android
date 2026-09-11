@@ -42,7 +42,7 @@ function createBot() {
   bot = mineflayer.createBot({
     host: host,
     port: port,
-    username: 'ZinProMax-BotMc',
+    username: 'ZinProMaxBOT',
     version: '1.21.1',
     auth: 'offline'
   });
