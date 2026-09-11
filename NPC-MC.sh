@@ -28,60 +28,57 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-function ask(q) {
-  return new Promise(resolve => rl.question(q, resolve));
+function ask(question) {
+  return new Promise(resolve => rl.question(question, resolve));
 }
 
-let host, port, version, bot;
-
-function clear() {
-  console.clear();
-}
+let host;
+let port;
+let bot;
 
 function createBot() {
-  clear();
-
-  console.log('====================================');
-  console.log('    Minecraft Bot');
-  console.log('====================================');
-  console.log(`🌐 ${host}:${port}`);
-  console.log(`🎮 Version: ${version}`);
-  console.log('🚀 Connecting...\n');
+  console.log(`🚀 Connecting to ${host}:${port} | Version: 1.21.1...`);
 
   bot = mineflayer.createBot({
-    host,
-    port,
-    username: 'ZinProMax_NPC',
-    auth: 'offline',
-    version
+    host: host,
+    port: port,
+    username: 'ZinProMax-BotMc',
+    version: '1.21.1',
+    auth: 'offline'
   });
 
   bot.once('spawn', () => {
-    console.log('✅ Joined Server!');
+    console.log('✅ Bot Joined Server!');
+    console.log('🎮 Minecraft Version: 1.21.1');
     console.log('💬 Type chat below:');
   });
 
-  bot.on('chat', (username, message) => {
-    if (username !== bot.username)
-      console.log(`💬 <${username}> ${message}`);
+  // Server chat → console
+  bot.on('message', (message) => {
+    console.log(`📨 ${message.toString()}`);
   });
 
-  bot.on('error', err => {
+  bot.on('error', (err) => {
     console.log(`❌ Error: ${err.message}`);
   });
 
-  bot.on('kicked', reason => {
+  bot.on('kicked', (reason) => {
     console.log(`⚠️ Kicked: ${reason}`);
   });
 
   bot.on('end', () => {
     console.log('🔄 Disconnected! Reconnecting in 5 seconds...');
-    setTimeout(createBot, 5000);
+
+    setTimeout(() => {
+      createBot();
+    }, 5000);
   });
 }
 
-rl.on('line', message => {
+// Terminal → Minecraft chat
+rl.on('line', (message) => {
   message = message.trim();
+
   if (!message) return;
 
   if (bot && bot.player) {
@@ -93,19 +90,15 @@ rl.on('line', message => {
 });
 
 async function main() {
-  clear();
-
   console.log('====================================');
-  console.log('             Bot');
+  console.log('   Minecraft Bot');
+  console.log('   Thank You ');
   console.log('====================================');
 
   host = (await ask('🌐 Server IP: ')).trim();
 
-  const p = (await ask('🔌 Server Port [25565]: ')).trim();
-  port = p === '' ? 25565 : parseInt(p);
-
-  version = (await ask('🎮 Minecraft Version [1.21.1]: ')).trim();
-  version = version === '' ? '1.21.1' : version;
+  const portInput = (await ask('🔌 Server Port [25565]: ')).trim();
+  port = portInput === '' ? 25565 : parseInt(portInput, 10);
 
   if (!host) {
     console.log('❌ Server IP is required!');
