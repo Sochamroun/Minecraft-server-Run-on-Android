@@ -44,6 +44,10 @@ curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases
 ```bash
 curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/AutoShutdown-server/AutoShutdown.zip && unzip -o AutoShutdown.zip && rm -rf AutoShutdown.zip
 ```
+* Login plugins
+```bash
+curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/Login/plugins.zip && unzip -o plugins.zip && rm -rf plugins.zip
+```
 ___
 ## Playit-gg tunnel Minecraft server 
 * Free tunnel tcp server to public
