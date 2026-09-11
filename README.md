@@ -49,6 +49,11 @@ curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases
 curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/Login/plugins.zip && unzip -o plugins.zip && rm -rf plugins.zip
 ```
 ___
+## BotMC
+* npm install mineflayer
+```bash
+curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/NPC-MC.sh | bash
+```
 ## Playit-gg tunnel Minecraft server 
 * Free tunnel tcp server to public
 
