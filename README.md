@@ -79,6 +79,13 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Termux-EasySetup/refs/hea
 curl -#LO https://raw.githubusercontent.com/Sochamroun/Termux-EasySetup/refs/heads/main/check-mc.py
 ```
 ---
+## Nvim editor Code 
+```bash
+yes | pkg install neovim nodejs-lts ripgrep -y
+git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
+rm -rf ~/.config/nvim/.git
+nvim
+```
 ## World challenge Free Download 🤫
 
 [![📁 curseforge](https://img.shields.io/badge/📁-curseforge-orange?style=for-the-badge)](https://www.curseforge.com/minecraft/search?class=worlds&page=1&pageSize=20&sortBy=relevancy) 
