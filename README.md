@@ -74,8 +74,13 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Termux-EasySetup/refs/hea
 ```
 ---
 ## Nvim editor Code 
+## 📦 Install Package / ដំឡើងកញ្ចប់
 ```bash
-yes | pkg install neovim nodejs-lts ripgrep -y && git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
+yes | pkg install neovim nodejs-lts ripgrep -y
+```
+## Git Clone AstroNvim Linux 
+```bash
+git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 nvim
 ```
