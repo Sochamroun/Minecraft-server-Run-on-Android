@@ -9,6 +9,9 @@ yes | pkg update && yes | pkg upgrade
 # Install packages
 yes | pkg install python git jq tmux wget iproute2 unzip fish nano nodejs nmap -y
 
+# pip install
+pip install -U mcstatus dnspython
+
 # Fix fish config folder (important)
 mkdir -p ~/.config/fish
 
