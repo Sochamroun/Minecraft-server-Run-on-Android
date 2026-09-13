@@ -67,12 +67,6 @@ curl -#LO https://github.com/playit-cloud/playit-minecraft-plugin/releases/lates
 ---
 ## Minecraft Seed 
 * -2382543636292059009 
-## Bot mineflayer 
-* Script Install
-* Name ZinProMax Offline Account 
-```bash
-curl -#LO https://raw.githubusercontent.com/Sochamroun/Termux-EasySetup/refs/heads/main/bot-setup-free.sh && chmod +x bot-setup-free.sh && bash bot-setup-free.sh && rm -rf bot-setup-free.sh
-```
 ---
 ## Python Check Server Online 🐍
 ```bash
