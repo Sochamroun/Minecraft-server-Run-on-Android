@@ -219,6 +219,7 @@ createBot();
 EOF
 
 chmod +x ~/mcbot/bot.js
+chmod +x ~/mcbot/npc.js
 
 cd 
 cat > ~/bot.sh << 'EOF'
