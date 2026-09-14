@@ -85,6 +85,10 @@ nvim
 ```bash
 curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/One_Chunk_1.21%2B/one.block.1.21+.zip && unzip -o one.block.1.21+.zip && rm -f one.block.1.21+.zip
 ```
+## 🚀 About Me
+[![Facebook](https://img.shields.io/badge/📍-Facebook-blue?style=for-the-badge)](https://www.facebook.com/share/18q25LzNnc/)
+[![telegram](https://img.shields.io/badge/🌐-Telegram-blue?style=for-the-badge)](https://t.me/Sochamroun123)
+---
 <div align="center">
     <p><b>សរសេរដោយ សុចំរើន </b></p>
     <p><b>បើ project នេះជួយដល់អ្នក សូមផ្ដល់ផ្កាយឲ្យខ្ញុំមួយមក ⭐</b></p>
