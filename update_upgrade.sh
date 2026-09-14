@@ -8,7 +8,7 @@ yes | pkg update && yes | pkg upgrade
 
 # Install packages
 yes | pkg install python git jq tmux wget iproute2 unzip fish nano nodejs nmap -y
-
+yes | openjdk-21 openjdk-17 openjdk-25 -y
 # pip install
 pip install -U mcstatus dnspython
 
