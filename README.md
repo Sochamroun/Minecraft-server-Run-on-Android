@@ -40,10 +40,6 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 ```bash
 curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/paper-1.21.11-plugins/plugins-EndUpdate.zip && unzip -o plugins-EndUpdate.zip && rm -f plugins-EndUpdate.zip
 ```
-* AutoShutdown Plugins
-```bash
-curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/AutoShutdown-server/AutoShutdown.zip && unzip -o AutoShutdown.zip && rm -rf AutoShutdown.zip
-```
 * Login plugins
 ```bash
 curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/Login/plugins.zip && unzip -o plugins.zip && rm -rf plugins.zip
