@@ -118,6 +118,106 @@ async function main() {
 main();
 EOF
 
+# ddos Server
+cat > ~/mcbot/npc.js << 'EOF'
+const mineflayer = require('mineflayer');
+
+const HOST = '192.168.x.x';
+const PORT = 25565;
+
+const MAX_BOTS = 20;
+const JOIN_DELAY = 5000;
+
+const bots = new Set();
+let stopped = false;
+let joined = 0;
+
+function randomName() {
+  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  const numbers = '2345678';
+
+  let name = '';
+
+  for (let i = 0; i < 6; i++) {
+    name += letters[Math.floor(Math.random() * letters.length)];
+  }
+
+  for (let i = 0; i < 2; i++) {
+    name += numbers[Math.floor(Math.random() * numbers.length)];
+  }
+
+  return name;
+}
+
+function createBot() {
+  if (stopped || joined >= MAX_BOTS) return;
+
+  const username = randomName();
+
+  const bot = mineflayer.createBot({
+    host: HOST,
+    port: PORT,
+    username,
+    version: '1.21.1'
+  });
+
+  bots.add(bot);
+  joined++;
+
+  console.log(`🤖 [${joined}/${MAX_BOTS}] Joining: ${username}`);
+
+  bot.once('spawn', () => {
+    console.log(`✅ Online: ${username}`);
+  });
+
+  bot.on('kicked', reason => {
+    console.log(`⚠️ Kicked: ${username} - ${reason}`);
+  });
+
+  bot.on('error', err => {
+    console.log(`❌ Error ${username}: ${err.message}`);
+  });
+
+  bot.on('end', () => {
+    bots.delete(bot);
+    console.log(`🔴 Offline: ${username}`);
+  });
+
+  if (joined < MAX_BOTS && !stopped) {
+    setTimeout(createBot, JOIN_DELAY);
+  } else {
+    console.log(`🎉 Finished. ${MAX_BOTS} bots attempted.`);
+  }
+}
+
+// Ctrl+C
+process.on('SIGINT', () => {
+  if (stopped) return;
+
+  stopped = true;
+  console.log('\n🛑 Stopping all bots...');
+
+  for (const bot of bots) {
+    try {
+      bot.quit('Load test stopped');
+    } catch {}
+  }
+
+  setTimeout(() => {
+    console.log('👋 All bots stopped.');
+    process.exit(0);
+  }, 1000);
+});
+
+console.log(`🎮 Minecraft Load Test`);
+console.log(`📡 ${HOST}:${PORT}`);
+console.log(`🤖 Bots: ${MAX_BOTS}`);
+console.log(`⏱️ Join delay: ${JOIN_DELAY / 1000}s`);
+console.log('');
+
+createBot();
+EOF
+
 chmod +x ~/mcbot/bot.js
 
 cd 
@@ -125,6 +225,7 @@ cat > ~/bot.sh << 'EOF'
 #!/data/data/com.termux/files/usr/bin/bash
 cd ~/mcbot && node bot.js
 EOF
+
 
 chmod +x bot.sh
 
