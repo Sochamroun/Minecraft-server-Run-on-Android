@@ -94,6 +94,8 @@ curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases
 * nano "Edit file script"
 * mkdir "create folder"
 * cp "copy file"
+* du -sh * "show size file= MB"
+* ifconfig "show ip "
 * CTRL+X and Y "Save file exit"
 * CTRL+C "Stop script or close"
 * CTRL+D "Exit Termux App"
