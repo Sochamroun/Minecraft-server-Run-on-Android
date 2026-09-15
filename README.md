@@ -24,12 +24,10 @@ yes | pkg install openjdk-21 openjdk-17 openjdk-25 -y
 ```bash
 curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/paper_mc.sh && chmod +x paper_mc.sh
 ```
----
 * vanilla server 🫡
 ```bash
 curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/vanilla_mc.sh && chmod +x vanilla_mc.sh
 ```
----
 * leaf Server 🌿
 
 [![🌿 Leaf](https://img.shields.io/badge/🌿-Leaf_Server_Download-green?style=for-the-badge)](https://www.leafmc.one/en/download/1.21.11)
@@ -46,7 +44,7 @@ curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases
 curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/Login/plugins.zip && unzip -o plugins.zip && rm -rf plugins.zip
 ```
 ___
-## BotMC
+## Bot Join server Minecraft 
 * npm install mineflayer
 ```bash
 curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/NPC-MC.sh | bash
@@ -85,10 +83,21 @@ nvim
 
 [![📁 curseforge](https://img.shields.io/badge/📁-curseforge-orange?style=for-the-badge)](https://www.curseforge.com/minecraft/search?class=worlds&page=1&pageSize=20&sortBy=relevancy) 
 
-* One Chunk challenge 
+* One Chunk challenge
 ```bash
 curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/One_Chunk_1.21%2B/one.block.1.21+.zip && unzip -o one.block.1.21+.zip && rm -f one.block.1.21+.zip
 ```
+---
+## How to use Termux 
+* cd "folder 📁"
+* ls "show All folder and file"
+* nano "Edit file script"
+* mkdir "create folder"
+* cp "copy file"
+* CTRL+X and Y "Save file exit"
+* CTRL+C "Stop script or close"
+* CTRL+D "Exit Termux App"
+* pkg install "packages"
 ---
 ## About Me 🔗
 [![Facebook](https://img.shields.io/badge/📍-Facebook-blue?style=for-the-badge)](https://www.facebook.com/share/18q25LzNnc/)
