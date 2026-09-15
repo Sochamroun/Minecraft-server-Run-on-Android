@@ -15,22 +15,33 @@ let port;
 let bot;
 
 function createBot() {
-  console.log(`🚀 Connecting to ${host}:${port}...`);
+  console.log(`🚀 Connecting to ${host}:${port} | Version: 1.21.1...`);
 
   bot = mineflayer.createBot({
-    host,
-    port,
-    username: 'ZinProMax-BotMc',
+    host: host,
+    port: port,
+    username: 'ZinProMaxBOT',
+    version: '1.21.1',
     auth: 'offline'
   });
 
   bot.once('spawn', () => {
-    console.log('✅ ZinProMax-Botmc Joined Server!');
+    console.log('✅ Bot Joined Server!');
+    console.log('🎮 Minecraft Version: 1.21.1');
     console.log('💬 Type chat below:');
+  });
+
+  // Server chat → console
+  bot.on('message', (message) => {
+    console.log(`📨 ${message.toString()}`);
   });
 
   bot.on('error', (err) => {
     console.log(`❌ Error: ${err.message}`);
+  });
+
+  bot.on('kicked', (reason) => {
+    console.log(`⚠️ Kicked: ${reason}`);
   });
 
   bot.on('end', () => {
@@ -40,13 +51,9 @@ function createBot() {
       createBot();
     }, 5000);
   });
-
-  bot.on('kicked', (reason) => {
-    console.log(`⚠️ Kicked: ${reason}`);
-  });
 }
 
-// Terminal input → Minecraft chat
+// Terminal → Minecraft chat
 rl.on('line', (message) => {
   message = message.trim();
 
@@ -62,7 +69,8 @@ rl.on('line', (message) => {
 
 async function main() {
   console.log('====================================');
-  console.log('   ZinProMax-Botmc Minecraft Bot');
+  console.log('   Minecraft Bot');
+  console.log('   Thank You ');
   console.log('====================================');
 
   host = (await ask('🌐 Server IP: ')).trim();
