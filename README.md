@@ -54,8 +54,7 @@ mkdir bot && cd bot
 ```
 * install mineflayer
 ```bash
-npm init -y
-npm install mineflayer
+npm init -y && npm install mineflayer
 ```
 * Download bot.js
 ```bash
