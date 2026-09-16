@@ -45,7 +45,36 @@ curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases
 ```
 ___
 ## Bot Join server Minecraft 
-* npm install mineflayer
+```bash
+yes | pkg install nodejs -y
+```
+* Create folder 📁
+```bash
+mkdir bot && cd bot
+```
+* install mineflayer
+```bash
+npm init -y
+npm install mineflayer
+```
+* Download bot.js
+```bash
+curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/bot.js
+```
+* run bot join server
+```bash
+node bot.js
+```
+* Edit bot.js
+```bash
+nano bot.sh
+```
+---
+### note 
+* Ctrl + x and y "save and exit"
+* Ctrl + c "Close bot or stop bot Run"
+---
+### auto install script bot
 ```bash
 curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/NPC-MC.sh | bash
 ```
