@@ -126,7 +126,7 @@ curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases
 | cp | copy file rename |
 | du -sh * | show size file= MB |
 | ifconfig | show ip |
-| CTRL+X and Y | Save file exit |
+| CTRL+X and Y | Save and exit |
 | CTRL+C | Stop script or close |
 | CTRL+D | Exit Termux App| 
 | pkg install | packages | 
