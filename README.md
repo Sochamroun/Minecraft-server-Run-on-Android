@@ -37,7 +37,7 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 * paper 1.21.11
 * note: cd folder 📁 server
 ```bash
-curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/paper-1.21.11-plugins/plugins-EndUpdate.zip && unzip -o plugins-EndUpdate.zip && rm -f plugins-EndUpdate.zip
+curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/paper-1.21.11-plugins/plugins.zip && unzip -o plugins.zip && rm -f plugins.zip
 ```
 * Login plugins
 ```bash
