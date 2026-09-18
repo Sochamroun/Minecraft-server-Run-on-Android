@@ -83,7 +83,7 @@ curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-An
 [![playit-gg](https://img.shields.io/badge/🎲-Playit_gg_Download-orange?style=for-the-badge)](https://playit.gg/download/linux)
 
 * playit-gg Plugins For papemc
-* cd name folder 📁 and cd plugins 
+* cd /$name && cd /plugins
 ```bash
 curl -#LO https://github.com/playit-cloud/playit-minecraft-plugin/releases/latest/download/playit-minecraft-plugin.jar
 ```
