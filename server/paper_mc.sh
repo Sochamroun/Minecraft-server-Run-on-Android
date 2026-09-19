@@ -147,8 +147,6 @@ server-port=$SERVER_PORT
 max-players=$MAX_PLAYERS
 hardcore=$HARDCORE
 motd=$MOTD
-network-compression-threshold=64
-sync-chunk-writes=false
 EOF
 
 # Add level-seed only if user entered one
