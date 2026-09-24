@@ -132,7 +132,7 @@ curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases
 | pkg install | packages | 
 
 ---
-## About Me 🔗
+
 [![Facebook](https://img.shields.io/badge/📍-Facebook-blue?style=for-the-badge)](https://www.facebook.com/share/18q25LzNnc/)
 [![telegram](https://img.shields.io/badge/🌐-Telegram-blue?style=for-the-badge)](https://t.me/Sochamroun123)
 ---
