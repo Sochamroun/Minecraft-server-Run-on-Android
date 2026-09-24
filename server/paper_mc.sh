@@ -147,6 +147,7 @@ server-port=$SERVER_PORT
 max-players=$MAX_PLAYERS
 hardcore=$HARDCORE
 motd=$MOTD
+network-compression-threshold=64
 EOF
 
 # Add level-seed only if user entered one
@@ -169,7 +170,7 @@ cat > ~/$SERVERNAME.sh <<EOF
 
 ip_address=\$(ip -4 addr show wlan0 | grep -oP 'inet \K[\d.]+')
 
-echo "IP Server Minecraft✅: \$ip_address"
+echo "Wifi Ipv4 Server : \$ip_address"
 echo "Please Wait Server Run 😎"
 
 cd ~/$SERVERNAME || exit
@@ -195,7 +196,7 @@ echo ""
 echo "🔓 Server Enabled 🧐"
 
 echo "Wait Check"
-sleep 3
+sleep 2
 
 echo "true = Premium ✅"
 echo "false = Offline/Cracked 🤫" 
