@@ -9,10 +9,6 @@ echo "==============================================="
 
 sleep 2
 
-# ==========================================
-# Server Folder
-# ==========================================
-
 echo ""
 read -p "Enter server folder 📂 name: " SERVERNAME
 
@@ -23,10 +19,6 @@ fi
 
 mkdir -p ~/"$SERVERNAME"
 cd ~/"$SERVERNAME" || exit 1
-
-# ==========================================
-# Minecraft Version
-# ==========================================
 
 echo ""
 echo "Enter Minecraft version 🎲"
@@ -39,29 +31,6 @@ if [ -z "$VERSION" ]; then
     echo "❌ Version cannot be empty!"
     exit 1
 fi
-
-# ==========================================
-# Check dependencies
-# ==========================================
-
-echo ""
-echo "🔎 Checking dependencies..."
-
-for CMD in curl jq wget java; do
-    if ! command -v "$CMD" >/dev/null 2>&1; then
-        echo "❌ Missing command: $CMD"
-        echo ""
-        echo "Install with:"
-        echo "pkg install $CMD -y"
-        exit 1
-    fi
-done
-
-echo "✅ Dependencies OK"
-
-# ==========================================
-# Leaf GitHub API
-# ==========================================
 
 echo ""
 echo "🍃 Searching Leaf release..."
@@ -77,10 +46,6 @@ if [ -z "$RELEASE_JSON" ]; then
     echo "❌ Cannot connect to Leaf GitHub API!"
     exit 1
 fi
-
-# ==========================================
-# Find Leaf JAR
-# ==========================================
 
 URL=$(echo "$RELEASE_JSON" | jq -r '
     .assets[]
@@ -112,10 +77,6 @@ echo "✅ Leaf found!"
 echo "📦 JAR: $JAR_NAME"
 echo "⬇️ Downloading..."
 
-# ==========================================
-# Download
-# ==========================================
-
 wget -O server.jar "$URL"
 
 if [ $? -ne 0 ]; then
@@ -128,10 +89,6 @@ echo ""
 echo "✅ Leaf download complete!"
 echo "📦 server.jar"
 
-# ==========================================
-# RAM
-# ==========================================
-
 echo ""
 read -p "RAM (default 2048M = 2G): " RAM
 
@@ -141,18 +98,11 @@ if [[ "$RAM" =~ ^[0-9]+$ ]]; then
     RAM="${RAM}M"
 fi
 
-# ==========================================
-# TimeZone
-# ==========================================
-
 echo ""
 read -p "TIMEZONE (default=Asia/Phnom_Penh): " TIMEZONE
 
 TIMEZONE=${TIMEZONE:-Asia/Phnom_Penh}
 
-# ==========================================
-# Start Script
-# ==========================================
 
 echo ""
 echo "Creating start.sh..."
@@ -173,20 +123,12 @@ echo "TIMEZONE=$TIMEZONE"
 
 sleep 2
 
-# ==========================================
-# First Start
-# ==========================================
-
 echo ""
 echo "==============================================="
 echo " 🍃 Starting Leaf first time..."
 echo "==============================================="
 
 ./start.sh
-
-# ==========================================
-# EULA
-# ==========================================
 
 echo ""
 echo "Accepting EULA..."
@@ -197,9 +139,6 @@ else
     echo "eula=true" > eula.txt
 fi
 
-# ==========================================
-# Server Settings
-# ==========================================
 
 echo ""
 echo "===== Server Settings ====="
@@ -271,10 +210,6 @@ esac
 echo ""
 read -p "Enter MOTD: " MOTD
 
-# ==========================================
-# server.properties
-# ==========================================
-
 echo ""
 echo "Writing server.properties..."
 
@@ -294,18 +229,11 @@ fi
 echo ""
 echo "✅ Settings saved!"
 
-# ==========================================
-# Plugins
-# ==========================================
-
 echo ""
 echo "Creating plugins folder..."
 
 mkdir -p plugins
 
-# ==========================================
-# Shortcut
-# ==========================================
 
 echo ""
 echo "Creating shortcut script..."
@@ -331,9 +259,6 @@ EOF
 
 chmod +x ~/"$SERVERNAME".sh
 
-# ==========================================
-# Done
-# ==========================================
 
 echo ""
 echo "==============================================="
@@ -349,13 +274,19 @@ echo "▶ Start server:"
 echo "bash $SERVERNAME.sh"
 
 echo ""
-echo "🍃 Leaf Version: $VERSION"
-echo "💾 RAM: $RAM"
-echo "🌐 Port: $SERVER_PORT"
-echo "👥 Max Players: $MAX_PLAYERS"
-echo "🔐 Online-mode: $ONLINE_MODE"
-echo "😠 Hardcore: $HARDCORE"
-echo "🌈 MOTD: $MOTD"
+echo "==============================================="
+echo " 📊 Server Information"
+echo "==============================================="
+
+echo ""
+echo "🌿 Leaf Version  : $VERSION"
+echo "💾 RAM           : $RAM"
+echo "🌐 Port          : $SERVER_PORT"
+echo "👥 Players       : $MAX_PLAYERS"
+echo "🔐 Online-mode   : $ONLINE_MODE"
+echo "😠 Hardcore      : $HARDCORE"
+echo "🌈 MOTD          : $MOTD"
+echo "🕐 TimeZone      : $TIMEZONE"
 
 echo ""
 echo "==============================================="
