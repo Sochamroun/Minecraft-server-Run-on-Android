@@ -10,6 +10,11 @@ echo "==============================================="
 sleep 2
 
 echo ""
+echo "==============================================="
+echo " 📁 Server Folder"
+echo "==============================================="
+
+echo ""
 read -p "Enter server folder 📂 name: " SERVERNAME
 
 if [ -z "$SERVERNAME" ]; then
@@ -21,7 +26,10 @@ mkdir -p ~/"$SERVERNAME"
 cd ~/"$SERVERNAME" || exit 1
 
 echo ""
-echo "Enter Minecraft version 🎲"
+echo "==============================================="
+echo " 🎲 Minecraft Version"
+echo "==============================================="
+echo ""
 echo "Example: 1.21.11"
 echo ""
 
