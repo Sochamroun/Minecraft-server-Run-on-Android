@@ -36,8 +36,13 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 ## 🔌 plugins Server 
 * paper 1.21.11
 * note: cd folder 📁 server
+* Normal Server 🌾
 ```bash
-curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/paper-1.21.11-plugins/plugins_1.0.1.zip && unzip -o plugins_1.0.1.zip && rm -f plugins_1.0.1.zip
+curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/paper-1.21.11-plugins/normal.zip && unzip -o normal.zip && rm -f normal.zip
+```
+* RPG Server ⛰️
+```bash
+curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/paper-1.21.11-plugins/RPG.zip && unzip -o RPG.zip && rm -f RPG.zip
 ```
 * Login plugins
 ```bash
