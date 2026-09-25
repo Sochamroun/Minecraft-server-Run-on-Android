@@ -272,10 +272,8 @@ ip_address=\$(ip -4 addr show wlan0 | grep -oP 'inet \K[\d.]+')
 
 echo "==============================================="
 echo " 🍃 Paper Minecraft Server"
+echo "IPv4 Server Minecraft ✅: \$ip_address:$SERVER_PORT"
 echo "==============================================="
-
-echo "IP Server Minecraft ✅: \$ip_address"
-echo "Please Wait Server Run 😎"
 
 sleep 10
 
