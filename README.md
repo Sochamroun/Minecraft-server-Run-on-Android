@@ -29,6 +29,9 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/vanilla_mc.sh && chmod +x vanilla_mc.sh
 ```
 * leaf Server 🌿
+```bash
+curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/leaf_mc.sh && chmod +x leaf_mc.sh
+```
 
 [![🌿 Leaf](https://img.shields.io/badge/🌿-Leaf_Server_Download-green?style=for-the-badge)](https://www.leafmc.one/en/download/1.21.11)
 
