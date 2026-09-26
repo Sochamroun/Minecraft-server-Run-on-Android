@@ -142,22 +142,33 @@ echo "==============================================="
 
 ./start.sh
 
+max-players=$MAX_PLAYERS
+hardcore=$HARDCORE
+motd=$MOTD
+EOF
+echo ""
+echo "==============================================="
+echo " 📜 EULA"
+echo "==============================================="
+
 echo ""
 echo "Accepting EULA..."
 
 if [ -f eula.txt ]; then
     sed -i 's/eula=false/eula=true/g' eula.txt
-else
-    echo "eula=true" > eula.txt
 fi
 
+echo "✅ EULA accepted"
 
 echo ""
-echo "===== Server Settings ====="
+echo "==============================================="
+echo " ⚙️ Server Settings"
+echo "==============================================="
 
 # Online Mode
+
 echo ""
-echo "Online Mode:"
+echo "🔐 Online Mode:"
 echo "1) false (Offline/Cracked)"
 echo "2) true (Premium)"
 
@@ -171,34 +182,42 @@ case "$ONLINE_CHOICE" in
         ONLINE_MODE=true
         ;;
     *)
-        echo "Invalid choice!"
+        echo "⚠️ Invalid choice!"
         echo "Using default: false"
         ONLINE_MODE=false
         ;;
 esac
 
 # View Distance
+
 echo ""
-read -p "View Distance (chunks, default 10): " VIEW_DISTANCE
+read -p " View Distance (chunks, default 10): " VIEW_DISTANCE
+
 VIEW_DISTANCE=${VIEW_DISTANCE:-10}
 
-# Port
+# Server Port
+
 echo ""
-read -p "Server Port (default 25565): " SERVER_PORT
+read -p "🌐 Server Port (default 25565): " SERVER_PORT
+
 SERVER_PORT=${SERVER_PORT:-25565}
 
 # Max Players
+
 echo ""
-read -p "Max Players (default 20): " MAX_PLAYERS
+read -p "👥 Max Players (default 20): " MAX_PLAYERS
+
 MAX_PLAYERS=${MAX_PLAYERS:-20}
 
-# Seed
+# Level Seed
+
 echo ""
-read -p "Level Seed (leave blank for random): " LEVEL_SEED
+read -p "🌱 Level Seed (leave blank for random): " LEVEL_SEED
 
 # Hardcore
+
 echo ""
-echo "Hardcore Mode:"
+echo "😠 Hardcore Mode:"
 echo "1) false (Normal)"
 echo "2) true (Hardcore)"
 
@@ -212,18 +231,19 @@ case "$HARDCORE_CHOICE" in
         HARDCORE=true
         ;;
     *)
-        echo "Invalid choice!"
+        echo "⚠️ Invalid choice!"
         echo "Defaulting to false"
         HARDCORE=false
         ;;
 esac
 
-# MOTD
 echo ""
-read -p "Enter MOTD: " MOTD
+read -p "🌈 Enter MOTD: " MOTD
 
 echo ""
-echo "Writing server.properties..."
+echo "==============================================="
+echo " ⚙️ Writing Server Properties"
+echo "==============================================="
 
 cat > server.properties <<EOF
 online-mode=$ONLINE_MODE
@@ -242,39 +262,45 @@ echo ""
 echo "✅ Settings saved!"
 
 echo ""
-echo "Creating plugins folder..."
+echo "==============================================="
+echo " 🔌 Plugins"
+echo "==============================================="
 
 mkdir -p plugins
 
+echo ""
+echo "✅ plugins folder created"
 
 echo ""
-echo "Creating shortcut script..."
+echo "==============================================="
+echo " ⚡ Server Shortcut"
+echo "==============================================="
 
-cat > ~/"$SERVERNAME".sh <<EOF
+cat > ~/$SERVERNAME.sh <<EOF
 #!/data/data/com.termux/files/usr/bin/bash
 
-ip_address=\$(ip -4 addr show wlan0 2>/dev/null | grep -oP 'inet \K[\d.]+' | head -n 1)
+ip_address=\$(ip -4 addr show wlan0 | grep -oP 'inet \K[\d.]+')
 
-if [ -z "\$ip_address" ]; then
-    echo "⚠️ Could not detect WLAN IP"
-else
-    echo "IP Server Minecraft ✅: \$ip_address:$SERVER_PORT"
-fi
+echo "==============================================="
+echo " 🍃 Paper Minecraft Server"
+echo "IPv4 Server Minecraft ✅: \$ip_address:$SERVER_PORT"
+echo "==============================================="
 
-echo "🍃 Leaf Server Starting..."
-sleep 2
+sleep 10
 
-cd ~/"$SERVERNAME" || exit 1
+cd ~/$SERVERNAME || exit
 
 ./start.sh
 EOF
 
-chmod +x ~/"$SERVERNAME".sh
+chmod +x ~/$SERVERNAME.sh
 
+echo ""
+echo "✅ Shortcut created"
 
 echo ""
 echo "==============================================="
-echo " 🍃 Leaf Server Installed Successfully"
+echo " 🎉 Paper Server Installed Successfully"
 echo "==============================================="
 
 echo ""
@@ -282,7 +308,7 @@ echo "📁 Folder:"
 echo "cd $SERVERNAME"
 
 echo ""
-echo "▶ Start server:"
+echo "▶️ Start server:"
 echo "bash $SERVERNAME.sh"
 
 echo ""
@@ -291,7 +317,7 @@ echo " 📊 Server Information"
 echo "==============================================="
 
 echo ""
-echo "🌿 Leaf Version  : $VERSION"
+echo "📦 Paper Version : $VERSION"
 echo "💾 RAM           : $RAM"
 echo "🌐 Port          : $SERVER_PORT"
 echo "👥 Players       : $MAX_PLAYERS"
