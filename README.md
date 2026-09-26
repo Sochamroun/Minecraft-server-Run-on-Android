@@ -147,7 +147,7 @@ curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases
 ---
 
 <div align="center">
-    <p><b>សរសេរដោយ សុចំរើន </b></p>
-    <p><b>បើ project នេះជួយដល់អ្នក សូមផ្ដល់ផ្កាយឲ្យខ្ញុំមួយមក ⭐</b></p>
-    <p><b>*Last updated: 26-9-2026*</b></p>
+    <p><b> Prepared by Sochamroun </b></p>
+    <p><b>If this project helps you, please give it a Stars ⭐</b></p>
+    <p><b>*Last updated: 26-9-2026 </b></p>
 </div>
