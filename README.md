@@ -3,6 +3,7 @@
 * 🛠️ Installation
 * 🎮 Paper Server
 * 🎮 Vanilla Server
+* 🎮 Leaf Server 
 * 🤖 Mineflayer Bot
 * ⚡ Server Optimization
 * 🌐 Tunnel / Playit.gg
