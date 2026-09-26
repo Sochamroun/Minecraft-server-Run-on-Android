@@ -317,7 +317,7 @@ echo " 📊 Server Information"
 echo "==============================================="
 
 echo ""
-echo "📦 Paper Version : $VERSION"
+echo "📦 leaf Version  : $VERSION"
 echo "💾 RAM           : $RAM"
 echo "🌐 Port          : $SERVER_PORT"
 echo "👥 Players       : $MAX_PLAYERS"
