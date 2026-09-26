@@ -10,6 +10,11 @@ echo "==============================================="
 sleep 2
 
 echo ""
+echo "==============================================="
+echo " 📁 Server Folder"
+echo "==============================================="
+
+echo ""
 read -p "Enter server folder 📂 name: " SERVERNAME
 
 mkdir -p ~/$SERVERNAME
