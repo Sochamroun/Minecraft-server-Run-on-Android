@@ -17,11 +17,6 @@ echo "==============================================="
 echo ""
 read -p "Enter server folder 📂 name: " SERVERNAME
 
-if [ -z "$SERVERNAME" ]; then
-    echo "❌ Server name cannot be empty!"
-    exit 1
-fi
-
 mkdir -p ~/"$SERVERNAME"
 cd ~/"$SERVERNAME" || exit 1
 
