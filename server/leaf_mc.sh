@@ -142,10 +142,6 @@ echo "==============================================="
 
 ./start.sh
 
-max-players=$MAX_PLAYERS
-hardcore=$HARDCORE
-motd=$MOTD
-EOF
 echo ""
 echo "==============================================="
 echo " 📜 EULA"
