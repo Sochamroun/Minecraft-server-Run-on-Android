@@ -20,7 +20,7 @@ curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-An
 ```bash
 yes | pkg install openjdk-21 openjdk-17 openjdk-25 -y
 ```
-* Paper Server 🌿
+* Paper Server 📃
 ```bash
 curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/paper_mc.sh && chmod +x paper_mc.sh
 ```
