@@ -98,6 +98,10 @@ echo "✅ Leaf download complete!"
 echo "📦 server.jar"
 
 echo ""
+echo "==============================================="
+echo " 💾 Server RAM"
+echo "==============================================="
+echo ""
 read -p "RAM (default 2048M = 2G): " RAM
 
 RAM=${RAM:-2048M}
