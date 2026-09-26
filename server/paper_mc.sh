@@ -72,7 +72,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo ""
-echo "✅ Download complete!"
+echo "✅ paper Download complete!"
 echo "📦 server.jar"
 
 echo ""
