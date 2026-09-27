@@ -46,7 +46,7 @@ curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases
 ```
 * RPG Server ⛰️
 ```bash
-curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/paper-1.21.11-plugins/RPG.zip && unzip -o RPG.zip && rm -f RPG.zip
+curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/paper-1.21.11-plugins/RPG_0.1.0.zip && unzip -o RPG_0.1.0.zip && rm -f RPG_0.1.0.zip
 ```
 * Login plugins
 ```bash
