@@ -287,7 +287,7 @@ echo "✅ Shortcut created"
 
 echo ""
 echo "==============================================="
-echo " 🎉 Paper Server Installed Successfully"
+echo " 🎉 leaf Server Installed Successfully"
 echo "==============================================="
 
 echo ""
@@ -304,7 +304,7 @@ echo " 📊 Server Information"
 echo "==============================================="
 
 echo ""
-echo "📦 Paper Version : $VERSION"
+echo "🌿 leaf Version  : $VERSION"
 echo "💾 RAM           : $RAM"
 echo "🌐 Port          : $SERVER_PORT"
 echo "👥 Players       : $MAX_PLAYERS"
