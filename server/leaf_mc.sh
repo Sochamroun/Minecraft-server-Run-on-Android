@@ -41,44 +41,25 @@ echo "Minecraft: $VERSION"
 
 API_URL="https://api.github.com/repos/Winds-Studio/Leaf/releases/tags/ver-$VERSION"
 
-RELEASE_JSON=$(curl -fsSL \
+RELEASE_JSON=$(curl -LfsS \
     -H "Accept: application/vnd.github+json" \
+    -H "X-GitHub-Api-Version: 2022-11-28" \
     "$API_URL")
 
-if [ -z "$RELEASE_JSON" ]; then
-    echo "❌ Cannot connect to Leaf GitHub API!"
-    exit 1
-fi
-
-URL=$(echo "$RELEASE_JSON" | jq -r '
+BUILD=$(echo "$RELEASE_JSON" | jq -r '
     .assets[]
-    | select(.name | test("\\.jar$"))
-    | .browser_download_url
-' | head -n 1)
-
-JAR_NAME=$(echo "$RELEASE_JSON" | jq -r '
-    .assets[]
-    | select(.name | test("\\.jar$"))
+    | select(.name | endswith(".jar"))
     | .name
-' | head -n 1)
+' | sed -E "s/^leaf-$VERSION-([0-9]+)\.jar$/\1/" | head -n 1)
 
-if [ -z "$URL" ] || [ "$URL" = "null" ]; then
-    echo ""
-    echo "❌ Leaf version not found!"
-    echo ""
-    echo "Available versions:"
-    curl -fsSL \
-        -H "Accept: application/vnd.github+json" \
-        "https://api.github.com/repos/Winds-Studio/Leaf/releases?per_page=30" |
-        jq -r '.[].tag_name' |
-        sed 's/^ver-//'
-    exit 1
-fi
+JAR_NAME="leaf-$VERSION-$BUILD.jar"
 
-echo ""
-echo "✅ Leaf found!"
+URL="https://github.com/Winds-Studio/Leaf/releases/download/ver-$VERSION/$JAR_NAME"
+
+echo "🍃 Leaf Version: $VERSION"
+echo "🔢 Build: #$BUILD"
 echo "📦 JAR: $JAR_NAME"
-echo "⬇️ Downloading..."
+echo "🔗 URL: $URL"
 
 wget -O server.jar "$URL"
 
