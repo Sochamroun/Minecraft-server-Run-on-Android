@@ -50,7 +50,7 @@ curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases
 ```
 * Login plugins
 ```bash
-curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/Login/plugins.zip && unzip -o plugins.zip && rm -rf plugins.zip
+curl -#LO https://github.com/AuthMe/AuthMeReloaded/releases/download/6.0.1/AuthMe-6.0.1-Paper.jar
 ```
 ___
 ## Bot Join server Minecraft 
