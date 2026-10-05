@@ -115,6 +115,15 @@ curl -#LO https://github.com/playit-cloud/playit-minecraft-plugin/releases/lates
 curl -#LO https://raw.githubusercontent.com/Sochamroun/Termux-EasySetup/refs/heads/main/check-mc.py
 ```
 ---
+## World challenge Free Download 🤫
+
+[![📁 curseforge](https://img.shields.io/badge/📁-curseforge-orange?style=for-the-badge)](https://www.curseforge.com/minecraft/search?class=worlds&page=1&pageSize=20&sortBy=relevancy) 
+
+* One Chunk challenge
+```bash
+curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/One_Chunk_1.21%2B/one.block.1.21+.zip && unzip -o one.block.1.21+.zip && rm -f one.block.1.21+.zip
+```
+---
 ## Nvim editor Code 
 ## 📦 Install Package / ដំឡើងកញ្ចប់
 ```bash
@@ -126,15 +135,7 @@ git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 nvim
 ```
-## World challenge Free Download 🤫
 
-[![📁 curseforge](https://img.shields.io/badge/📁-curseforge-orange?style=for-the-badge)](https://www.curseforge.com/minecraft/search?class=worlds&page=1&pageSize=20&sortBy=relevancy) 
-
-* One Chunk challenge
-```bash
-curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/One_Chunk_1.21%2B/one.block.1.21+.zip && unzip -o one.block.1.21+.zip && rm -f one.block.1.21+.zip
-```
----
 ## How to use Termux 
 | Command line | Description |
 |--------------|-------------|
