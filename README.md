@@ -9,7 +9,9 @@
 * 🌐 Tunnel / Playit.gg
 * ❓ Troubleshooting
 * 📞 Support 0883963489 🇰🇭
-* [!/[English](https://img.shields.io/badge/🇬🇧-English-blue?style=for-the-badge)](README.md)
+  
+[![🇬🇧English](https://img.shields.io/badge/🇬🇧-English-blue?style=for-the-badge)](README.md)
+[![🇰🇭Cambodia](https://img.shields.io/badge/🇰🇭-Cambodia-blue?style=for-the-badge)](KHMER.md)
 
 [![✅ Termux](https://img.shields.io/badge/🥱-Termux_Download-blue?style=for-the-badge)](https://github.com/Sochamroun/Termux-EasySetup/releases/download/App/termux.apk)
 ## Update and upgrade Termux 
