@@ -55,7 +55,7 @@ curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases
 ```bash
 curl -#LO https://github.com/AuthMe/AuthMeReloaded/releases/download/6.0.1/AuthMe-6.0.1-Paper.jar
 ```
-## Minecraft server Fix Item Swap 
+## Minecraft server Fix Fast Item Swap
 [![Readme](https://img.shields.io/badge/👉-Cick_here-yellow?style=for-the-badge)](https://github.com/Sochamroun/Minecraft-server-Run-on-Android/blob/4311033cc7b03cfdc6e70b505e279416057f4b4e/server/config.md)
 
 ___
