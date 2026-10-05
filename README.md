@@ -42,7 +42,8 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 ---
 ## 🔌 plugins Server 
 * paper 1.21.11
-* note: cd folder 📁 server
+* note: cd `server folder`
+---
 * Normal Server 🌾
 ```bash
 curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/paper-1.21.11-plugins/normal.zip && unzip -o normal.zip && rm -f normal.zip
@@ -51,7 +52,9 @@ curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases
 ```bash
 curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/paper-1.21.11-plugins/RPG_0.1.0.zip && unzip -o RPG_0.1.0.zip && rm -f RPG_0.1.0.zip
 ```
-* Login plugins
+* plugins AuthMe
+- cd `server folder`
+- cd `cd plugins`
 ```bash
 curl -#LO https://github.com/AuthMe/AuthMeReloaded/releases/download/6.0.1/AuthMe-6.0.1-Paper.jar
 ```
@@ -97,8 +100,9 @@ curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-An
 
 [![playit-gg](https://img.shields.io/badge/🎲-Playit_gg_Download-orange?style=for-the-badge)](https://playit.gg/download/linux)
 
-* playit-gg Plugins For papemc
-* cd /$name && cd /plugins
+* playit-gg Plugins
+- cd `server folder`
+- cd `cd plugins`
 ```bash
 curl -#LO https://github.com/playit-cloud/playit-minecraft-plugin/releases/latest/download/playit-minecraft-plugin.jar
 ```
