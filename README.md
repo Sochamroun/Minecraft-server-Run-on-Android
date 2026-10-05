@@ -8,7 +8,7 @@
 * ⚡ Server Optimization
 * 🌐 Tunnel / Playit.gg
 * ❓ Troubleshooting
-* 📞 Support 0883963489 🇰🇭
+* 📞 Support Facebook/telegram
   
 [![🇬🇧English](https://img.shields.io/badge/🇬🇧-English-blue?style=for-the-badge)](https://github.com/Sochamroun/Minecraft-server-Run-on-Android/blob/f6bcb8f840125d0814ecc4d295cdef3a724f44e8/README.md)
 [![🇰🇭Cambodia](https://img.shields.io/badge/🇰🇭-Cambodia-blue?style=for-the-badge)](https://github.com/Sochamroun/Minecraft-server-Run-on-Android/blob/f6bcb8f840125d0814ecc4d295cdef3a724f44e8/KHMER.md)
