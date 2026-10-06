@@ -10,7 +10,6 @@
 * ❓ Troubleshooting
 * 📞 Support Facebook/telegram
   
-[![🇬🇧English](https://img.shields.io/badge/🇬🇧-English-blue?style=for-the-badge)](https://github.com/Sochamroun/Minecraft-server-Run-on-Android/blob/f6bcb8f840125d0814ecc4d295cdef3a724f44e8/README.md)
 [![🇰🇭Cambodia](https://img.shields.io/badge/🇰🇭-Cambodia-blue?style=for-the-badge)](https://github.com/Sochamroun/Minecraft-server-Run-on-Android/blob/f6bcb8f840125d0814ecc4d295cdef3a724f44e8/KHMER.md)
 
 [![✅ Termux](https://img.shields.io/badge/🥱-Termux_Download-blue?style=for-the-badge)](https://github.com/Sochamroun/Termux-EasySetup/releases/download/App/termux.apk)
@@ -106,6 +105,11 @@ curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-An
 ```bash
 curl -#LO https://github.com/playit-cloud/playit-minecraft-plugin/releases/latest/download/playit-minecraft-plugin.jar
 ```
+---
+## Install Ubuntu server To Run Playit-gg 
+
+[![🥱Playit-gg](https://img.shields.io/badge/🥱-Playit_gg_Cick_here-blue?style=for-the-badge)](https://github.com/Sochamroun/Minecraft-server-Run-on-Android/tree/97f7565d8b72748b1eccaef6ef4876942cdbf749/Playit-gg)
+
 ---
 ## Minecraft Seed 
 * -2382543636292059009 
