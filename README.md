@@ -165,5 +165,5 @@ nvim
 <div align="center">
     <p><b> Prepared by Sochamroun </b></p>
     <p><b>If this project helps you, please give it a Stars ⭐</b></p>
-    <p><b>*Last updated: 26-9-2026 </b></p>
+    <p><b>*Last updated: 7-10-2026 </b></p>
 </div>
