@@ -19,9 +19,9 @@ curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-An
 ```
 ---
 ## Download Script Install Server 
-* Install Java 17 21 25
+* Install Java 21 25
 ```bash
-yes | pkg install openjdk-21 openjdk-17 openjdk-25 -y
+yes | pkg install openjdk-21 openjdk-25 -y
 ```
 * Paper Server 📃
 ```bash
