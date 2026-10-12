@@ -43,6 +43,10 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 * paper 1.21.11
 * note: cd `server folder`
 ---
+* Normal Server v1 New Update
+```bash
+curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/normal_v1/Normal_v1.zip && unzip -o Normal_v1.zip && rm -f Normal_v1.zip
+```
 * Normal Server 🌾
 ```bash
 curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/paper-1.21.11-plugins/normal.zip && unzip -o normal.zip && rm -f normal.zip
