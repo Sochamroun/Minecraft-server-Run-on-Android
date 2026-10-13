@@ -45,7 +45,7 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 ---
 * Normal Server v1 New Update
 ```bash
-curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/normal_v1/Normal_v1.zip && unzip -o Normal_v1.zip && rm -f Normal_v1.zip
+curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/normal_v1/Normal_v1.0.zip && unzip -o Normal_v1.0.zip && rm -f Normal_v1.0.zip
 ```
 * Normal Server 🌾
 ```bash
