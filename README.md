@@ -12,7 +12,7 @@
   
 [![🇰🇭Cambodia](https://img.shields.io/badge/🇰🇭-Cambodia-blue?style=for-the-badge)](https://github.com/Sochamroun/Minecraft-server-Run-on-Android/blob/f6bcb8f840125d0814ecc4d295cdef3a724f44e8/KHMER.md)
 
-[![✅ Termux](https://img.shields.io/badge/🥱-Termux_Download-blue?style=for-the-badge)](https://github.com/Sochamroun/Termux-EasySetup/releases/download/App/termux.apk)
+[![✅ Termux](https://img.shields.io/badge/🥱-Termux_Download_click_here-blue?style=for-the-badge)](https://github.com/Sochamroun/Termux-EasySetup/releases/download/App/termux.apk)
 ## Update and upgrade Termux 
 ```bash
 curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/Install.sh | bash
