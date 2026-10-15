@@ -45,7 +45,7 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 ---
 * Survival plugins NEW 
 ```bash
-curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/plugins/survival.zip && unzip -o survival.zip && rm -f survival.zip
+curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/plugins_server/survival.zip && unzip -o survival.zip && rm -f survival.zip
 ```
 * Normal Server 🌾
 ```bash
