@@ -1,6 +1,7 @@
 ## Install playit-gg using Ubuntu server 
 
 <img src="./Playit-gg/playit-gg_benner.png" width="100%" alt="Playit-gg">
+
 ### Install Proot-Distro
 ```bash
 yes | pkg install proot-distro -y
