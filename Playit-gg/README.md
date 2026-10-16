@@ -39,7 +39,7 @@ proot-distro login ubuntu
 ```
 ### Note 
 * Claim Your key Agent Tunnel playit-gg
-* Login account finish
+* Login account And Create Tunnel Minecraft java
 
 <div align="center">
     <p><b> Prepared by Sochamroun </b></p>
