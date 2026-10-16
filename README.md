@@ -12,7 +12,7 @@
   
 [![🇰🇭Cambodia](https://img.shields.io/badge/🇰🇭-Cambodia-blue?style=for-the-badge)](https://github.com/Sochamroun/Minecraft-server-Run-on-Android/blob/f6bcb8f840125d0814ecc4d295cdef3a724f44e8/KHMER.md)
 
-<img src="./Gif/ZinPromax.gif" width="85%" alt="ZinProMax">
+<img src="./Gif/ZinPromax.gif" width="100%" alt="ZinProMax">
 
 [![✅ Termux](https://img.shields.io/badge/🥱-Termux_Download_click_here-blue?style=for-the-badge)](https://github.com/Sochamroun/Termux-EasySetup/releases/download/App/termux.apk)
 ## Update and upgrade Termux 
