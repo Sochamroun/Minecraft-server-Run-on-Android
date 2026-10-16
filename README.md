@@ -111,7 +111,7 @@ curl -#LO https://github.com/playit-cloud/playit-minecraft-plugin/releases/lates
 ---
 ## Install Ubuntu server To Run Playit-gg 
 
-[![🥱Playit-gg](https://img.shields.io/badge/🥱-Playit_gg_Cick_here-blue?style=for-the-badge)](https://github.com/Sochamroun/Minecraft-server-Run-on-Android/tree/97f7565d8b72748b1eccaef6ef4876942cdbf749/Playit-gg)
+[![🥱Playit-gg](https://img.shields.io/badge/🥱-Playit_gg_Cick_here-blue?style=for-the-badge)](https://github.com/Sochamroun/Minecraft-server-Run-on-Android/tree/main/Playit-gg)
 
 ---
 ## Minecraft Seed 
