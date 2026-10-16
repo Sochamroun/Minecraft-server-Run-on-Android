@@ -1,6 +1,6 @@
-## Install playit-gg using Ubuntu server 
+## Install playit-gg using Ubuntu server For Android 
 
-<img src="./Playit-gg/playit-gg_benner.png" width="100%" alt="Playit-gg">
+![Playit.gg_Banner](https://github.com/Sochamroun/Minecraft-server-Run-on-Android/blob/main/Playit-gg/playit-gg_benner.png)
 
 ### Install Proot-Distro
 ```bash
