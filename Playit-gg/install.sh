@@ -14,5 +14,7 @@ EOF
 
 chmod +x ~/playit.sh
 
+clear
+
 echo "Run playit-gg"
 echo "playit.sh"
