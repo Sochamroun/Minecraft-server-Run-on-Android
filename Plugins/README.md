@@ -22,3 +22,5 @@ curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases
 curl -#LO https://github.com/AuthMe/AuthMeReloaded/releases/download/6.0.1/AuthMe-6.0.1-Paper.jar
 ```
 ___
+
+<img src="./Gojo_.gif" width="100%" alt="Gojo">
