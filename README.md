@@ -14,7 +14,13 @@
 
 <img src="./Gif/ZinPromax.gif" width="100%" alt="ZinProMax">
 
+
+<div align="center">
+
 [![✅ Termux](https://img.shields.io/badge/🥱-Termux_Download_click_here-blue?style=for-the-badge)](https://github.com/Sochamroun/Termux-EasySetup/releases/download/App/termux.apk)
+
+</div>
+
 ## Update and upgrade Termux 
 ```bash
 curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/Install.sh | bash
