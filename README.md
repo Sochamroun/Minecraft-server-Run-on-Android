@@ -43,7 +43,7 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 ---
 ## 🔌 plugins For Server 
 
-[![⚙️plugins](https://img.shields.io/badge/⚙️-Plugins_Download_click_here-green?style=for-the-badge)](./plugins)
+[![⚙️plugins](https://img.shields.io/badge/⚙️-Plugins_Download_click_here-green?style=for-the-badge)](./Plugins)
 
 ## Bot Join server Minecraft 
 ```bash
