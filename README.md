@@ -157,6 +157,11 @@ nvim
 [![telegram](https://img.shields.io/badge/🌐-Telegram-blue?style=for-the-badge)](https://t.me/Sochamroun123)
 [![support](https://img.shields.io/badge/☕-Support_Me-blue?style=for-the-badge)](https://github.com/Sochamroun/Minecraft-server-Run-on-Android/blob/2a008aec64d1201f5eb29e3f72c59a22de74cb67/Buy_my_coffee.png)
 ---
+### panel Server 
+* code build GPT
+```bash
+curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/panel.py && python panel.py
+```
 
 <div align="center">
     <p><b> Prepared by Sochamroun </b></p>
