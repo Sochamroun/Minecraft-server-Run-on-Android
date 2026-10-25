@@ -31,28 +31,34 @@ echo ""
 
 read -p "Version: " VERSION
 
-JSON_URL="https://gist.githubusercontent.com/osipxd/6119732e30059241c2192c4a8d2218d9/raw/paper-versions.json"
+API_BASE="https://fill.papermc.io/v3/projects/paper/versions"
 
 echo ""
-echo "==============================================="
-echo " 🔎 Searching Paper"
-echo "==============================================="
+echo "Getting the latest stable build for Minecraft $VERSION..."
 
-echo ""
-echo "Getting download URL..."
+BUILDS_JSON=$(curl -fsSL -H "Accept: application/json" \                                                                                                                             "$API_BASE/$VERSION/builds?channel=STABLE&limit=1")
 
-URL=$(curl -fsSL "$JSON_URL" | jq -r ".versions[\"$VERSION\"]")
-
-if [ -z "$URL" ] || [ "$URL" = "null" ]; then
+if [ $? -ne 0 ] || [ -z "$BUILDS_JSON" ]; then
     echo ""
-    echo "❌ Paper version not found!"
+    echo "❌ Could not get Paper build information from the Fill API."
+    echo "   Check your internet connection and Minecraft version."
+    exit 1
+fi
+
+URL=$(printf '%s' "$BUILDS_JSON" | jq -er '.[0].downloads["server:default"].url // empty' 2>/dev/null)
+BUILD=$(printf '%s' "$BUILDS_JSON" | jq -er '.[0].id // empty' 2>/dev/null)
+
+if [ -z "$URL" ] || [ -z "$BUILD" ]; then
     echo ""
+    echo "❌ No stable Paper build was found for version $VERSION."
+    echo "   Check the version at https://fill-ui.papermc.io/projects/paper"
     exit 1
 fi
 
 echo ""
-echo "✅ Paper found!"
-echo "📦 Version: $VERSION"
+echo "✅ Paper build found!"
+echo "📦 Minecraft Version: $VERSION"
+echo "🔢 Build: $BUILD"
 
 echo ""
 echo "==============================================="
@@ -63,10 +69,14 @@ echo ""
 echo "📥 Downloading server.jar..."
 
 wget -O server.jar "$URL"
-
 if [ $? -ne 0 ]; then
-    echo ""
     echo "❌ Download failed!"
+    rm -f server.jar
+    exit 1
+fi
+
+if [ ! -s server.jar ]; then
+    echo "❌ Downloaded file is empty or invalid."
     rm -f server.jar
     exit 1
 fi
