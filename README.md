@@ -18,6 +18,7 @@
 <div align="center">
 
 [![✅ Termux](https://img.shields.io/badge/🥱-Termux_Download_click_here-blue?style=for-the-badge)](https://github.com/Sochamroun/Termux-EasySetup/releases/download/App/termux.apk)
+[![📁 Material_Files](https://img.shields.io/badge/📁-Material_Files_Download_click_here-blue?style=for-the-badge)](https://play.google.com/store/apps/details?id=me.zhanghai.android.files)
 
 </div>
 
