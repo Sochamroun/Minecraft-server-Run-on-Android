@@ -43,8 +43,10 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 ```bash
 curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/leaf_mc.sh && chmod +x leaf_mc.sh
 ```
-
+---
+### Server Type Link Website Official 
 [![🌿 Leaf](https://img.shields.io/badge/🌿-Leaf_Server_Download-green?style=for-the-badge)](https://www.leafmc.one/en/download/1.21.11)
+
 [![📃 Paper](https://img.shields.io/badge/📃-Paper_Server_Download-yellow?style=for-the-badge)](https://fill-ui.papermc.io/projects/paper)
 
 ---
