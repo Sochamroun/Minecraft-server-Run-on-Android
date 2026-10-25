@@ -46,44 +46,27 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 
 [![🌿 Leaf](https://img.shields.io/badge/🌿-Leaf_Server_Download-green?style=for-the-badge)](https://www.leafmc.one/en/download/1.21.11)
 
+[![📃 Paper](https://img.shields.io/badge/📃-Paper_Server_Download-yellow?style=for-the-badge)](https://fill-ui.papermc.io/projects/paper)
+
 ---
 ## 🔌 plugins For Server 
 
 [![⚙️plugins](https://img.shields.io/badge/⚙️-Plugins_Download_click_here-green?style=for-the-badge)](./Plugins)
 
-## Bot Join server Minecraft 
+---
+### panel Server for private Ipv4
 ```bash
-yes | pkg install nodejs -y
-```
-* Create folder 📁
-```bash
-mkdir bot && cd bot
-```
-* install mineflayer
-```bash
-npm init -y && npm install mineflayer
-```
-* Download bot.js
-```bash
-curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/bot.js
-```
-* run bot join server
-```bash
-node bot.js
-```
-* Edit bot.js
-```bash
-nano bot.sh
+curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/panel.py && python panel.py
 ```
 ---
+### auto install script bot 
+```bash
+curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/NPC-MC.sh | bash
+```
 ### note 
 * Ctrl + x and y "save and exit"
 * Ctrl + c "Close bot or stop bot Run"
 ---
-### auto install script bot
-```bash
-curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/NPC-MC.sh | bash
-```
 ## Playit-gg tunnel Minecraft server 
 * Free tunnel tcp server to public
 
@@ -107,34 +90,6 @@ curl -#LO https://github.com/playit-cloud/playit-minecraft-plugin/releases/lates
 curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/Playit-gg/install.sh | bash
 ```
 ---
-## Minecraft Seed 
-* -2382543636292059009 
----
-## Python Check Server Online 🐍
-```bash
-curl -#LO https://raw.githubusercontent.com/Sochamroun/Termux-EasySetup/refs/heads/main/check-mc.py
-```
----
-## World challenge Free Download 🤫
-
-[![📁 curseforge](https://img.shields.io/badge/📁-curseforge-orange?style=for-the-badge)](https://www.curseforge.com/minecraft/search?class=worlds&page=1&pageSize=20&sortBy=relevancy) 
-
-* One Chunk challenge
-```bash
-curl -#LO https://github.com/Sochamroun/Minecraft-server-Run-on-Android/releases/download/One_Chunk_1.21%2B/one.block.1.21+.zip && unzip -o one.block.1.21+.zip && rm -f one.block.1.21+.zip
-```
----
-## Nvim editor Code 
-## 📦 Install Package / ដំឡើងកញ្ចប់
-```bash
-yes | pkg install neovim nodejs-lts ripgrep -y
-```
-## Git Clone AstroNvim Linux 
-```bash
-git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
-rm -rf ~/.config/nvim/.git
-nvim
-```
 
 ## How to use Termux 
 | Command line | Description |
@@ -157,10 +112,6 @@ nvim
 [![telegram](https://img.shields.io/badge/🌐-Telegram-blue?style=for-the-badge)](https://t.me/Sochamroun123)
 [![support](https://img.shields.io/badge/☕-Support_Me-blue?style=for-the-badge)](https://github.com/Sochamroun/Minecraft-server-Run-on-Android/blob/2a008aec64d1201f5eb29e3f72c59a22de74cb67/Buy_my_coffee.png)
 ---
-### panel Server for Local Ip
-```bash
-curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/panel.py && python panel.py
-```
 
 <div align="center">
     <p><b> Prepared by Sochamroun </b></p>
