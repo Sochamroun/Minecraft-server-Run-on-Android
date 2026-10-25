@@ -9,8 +9,7 @@ echo "==============================================="
 sleep 5
 
 echo ""
-echo "Enter server folder 📂 name:"
-read SERVERNAME
+read -p "Enter server folder 📂 name: " SERVERNAME
 
 mkdir -p ~/$SERVERNAME
 cd ~/$SERVERNAME || exit
@@ -46,97 +45,164 @@ fi
 
 echo "✅ Vanilla Minecraft Server downloaded!"
 
-# Ram Server
-read -p "RAM (default 2024M = 2G) (note M=MB ; G=GB ): " RAM
-RAM=${RAM:-2024M}
+echo ""
+echo "==============================================="
+echo " 💾 Server RAM"
+echo "==============================================="
 
-# TimeZone
+echo ""
+read -p "RAM (default 2048M = 2G): " RAM
+
+RAM=${RAM:-2048M}
+
+if [[ "$RAM" =~ ^[0-9]+$ ]]; then
+    RAM="${RAM}M"
+fi
+
+echo ""
+echo "✅ RAM: $RAM"
+
+echo ""
+echo "==============================================="
+echo " 🕐 TimeZone"
+echo "==============================================="
+
+echo ""
 echo "Search TimeZoneDB"
+
 read -p "TIMEZONE (default=Asia/Phnom_Penh): " TIMEZONE
+
 TIMEZONE=${TIMEZONE:-Asia/Phnom_Penh}
 
 echo ""
-echo "Creating start.sh..."
+echo "✅ TimeZone: $TIMEZONE"
+
+echo ""
+echo "==============================================="
+echo " ▶️ Creating Start Script"
+echo "==============================================="
 
 cat > start.sh <<EOF
 #!/data/data/com.termux/files/usr/bin/bash
+
 export TZ=$TIMEZONE
+
 java -Xms$RAM -Xmx$RAM -jar server.jar nogui
 EOF
 
 chmod +x start.sh
 
-echo "RAM=$RAM"
-echo "TIMEZONE=$TIMEZONE"
-sleep 2
-
-chmod +x start.sh
+echo ""
+echo "✅ start.sh created"
 
 echo ""
-echo "Running server first time... 📝"
+echo "==============================================="
+echo " 🚀 Starting Paper First Time"
+echo "==============================================="
+
+echo ""
+echo "📝 Running server..."
+
 ./start.sh
 
 echo ""
-echo "Accepting EULA... 🗂️"
-if [ -f eula.txt ]; then
-sed -i 's/eula=false/eula=true/g' eula.txt
-fi
+echo "==============================================="
+echo " 📜 EULA"
+echo "==============================================="
 
 echo ""
-echo "===== Server Settings ====="
+echo "Accepting EULA..."
+
+if [ -f eula.txt ]; then
+    sed -i 's/eula=false/eula=true/g' eula.txt
+fi
+
+echo "✅ EULA accepted"
+
+echo ""
+echo "==============================================="
+echo " ⚙️ Server Settings"
+echo "==============================================="
 
 # Online Mode
-echo "Online Mode:"
+
+echo ""
+echo "🔐 Online Mode:"
 echo "1) false (Offline/Cracked)"
 echo "2) true (Premium)"
+
 read -p "Choose (1-2): " ONLINE_CHOICE
 
 case "$ONLINE_CHOICE" in
-    1) ONLINE_MODE=false ;;
-    2) ONLINE_MODE=true ;;
+    1)
+        ONLINE_MODE=false
+        ;;
+    2)
+        ONLINE_MODE=true
+        ;;
     *)
-        echo "Invalid choice! Using default: false (Offline/Cracked)"
+        echo "⚠️ Invalid choice!"
+        echo "Using default: false"
         ONLINE_MODE=false
         ;;
 esac
 
 # View Distance
-read -p "View Distance (chunks, default 10): " VIEW_DISTANCE
+
+echo ""
+read -p " View Distance (chunks, default 10): " VIEW_DISTANCE
+
 VIEW_DISTANCE=${VIEW_DISTANCE:-10}
 
 # Server Port
-read -p "Server Port (default 25565): " SERVER_PORT
+
+echo ""
+read -p "🌐 Server Port (default 25565): " SERVER_PORT
+
 SERVER_PORT=${SERVER_PORT:-25565}
 
 # Max Players
-read -p "Max Players (default 20): " MAX_PLAYERS
+
+echo ""
+read -p "👥 Max Players (default 20): " MAX_PLAYERS
+
 MAX_PLAYERS=${MAX_PLAYERS:-20}
 
 # Level Seed
-read -p "Level Seed (leave blank for random): " LEVEL_SEED
+
+echo ""
+read -p "🌱 Level Seed (leave blank for random): " LEVEL_SEED
 
 # Hardcore
+
 echo ""
-echo "Hardcore Mode:"
+echo "😠 Hardcore Mode:"
 echo "1) false (Normal)"
 echo "2) true (Hardcore)"
+
 read -p "Choose (1-2): " HARDCORE_CHOICE
 
 case "$HARDCORE_CHOICE" in
-    1) HARDCORE=false ;;
-    2) HARDCORE=true ;;
+    1)
+        HARDCORE=false
+        ;;
+    2)
+        HARDCORE=true
+        ;;
     *)
-        echo "Invalid choice! Defaulting to false (Normal)"
+        echo "⚠️ Invalid choice!"
+        echo "Defaulting to false"
         HARDCORE=false
         ;;
 esac
 
-# MOTD
 echo ""
-read -p "Enter MOTD: " MOTD
+read -p "🌈 Enter MOTD: " MOTD
 
 echo ""
-echo "Writing server.properties..."
+echo "==============================================="
+echo " ⚙️ Writing Server Properties"
+echo "==============================================="
 
 cat > server.properties <<EOF
 online-mode=$ONLINE_MODE
@@ -147,7 +213,6 @@ hardcore=$HARDCORE
 motd=$MOTD
 EOF
 
-# Add level-seed only if user entered one
 if [ -n "$LEVEL_SEED" ]; then
     echo "level-seed=$LEVEL_SEED" >> server.properties
 fi
@@ -156,7 +221,19 @@ echo ""
 echo "✅ Settings saved!"
 
 echo ""
-echo "Creating shortcut script..."
+echo "==============================================="
+echo " 🔌 Plugins"
+echo "==============================================="
+
+mkdir -p plugins
+
+echo ""
+echo "✅ plugins folder created"
+
+echo ""
+echo "==============================================="
+echo " ⚡ Server Shortcut"
+echo "==============================================="
 
 cat > "$HOME/$SERVERNAME.sh" <<EOF
 #!/data/data/com.termux/files/usr/bin/bash
@@ -206,28 +283,37 @@ EOF
 chmod +x "$HOME/$SERVERNAME.sh"
 
 echo ""
-echo "===================================="
-echo " ✅ Server Installed Successfully"
-echo "===================================="
+echo "✅ Shortcut created"
+
+echo ""
+echo "==============================================="
+echo " 🎉 Paper Server Installed Successfully"
+echo "==============================================="
 
 echo ""
 echo "📁 Folder:"
-echo "cd ~/$SERVERNAME"
+echo "cd $SERVERNAME"
 
 echo ""
-echo "▶ Start server:"
-echo "bash ~/$SERVERNAME.sh"
+echo "▶️ Start server:"
+echo "bash $SERVERNAME.sh"
 
 echo ""
-echo "🔓 Server Enabled 🧐"
+echo "==============================================="
+echo " 📊 Server Information"
+echo "==============================================="
 
-echo "Wait Check"
-sleep 5
+echo ""
+echo "📦 vanilla Version : $VERSION"
+echo "💾 RAM           : $RAM"
+echo "🌐 Port          : $SERVER_PORT"
+echo "👥 Players       : $MAX_PLAYERS"
+echo "🔐 Online-mode   : $ONLINE_MODE"
+echo "😠 Hardcore      : $HARDCORE"
+echo "🌈 MOTD          : $MOTD"
+echo "🕐 TimeZone      : $TIMEZONE"
 
-echo "true = Premium ✅"
-echo "false = Offline/Cracked 🤫" 
-echo " 🍎 Online-mode=$ONLINE_MODE"
-echo " 😠 Hardcore=$HARDCORE"
-echo " 😎 Player=$MAX_PLAYERS"
-echo " 🌈 MOTD set: $MOTD"
-
+echo ""
+echo "==============================================="
+echo " ✅ READY!"
+echo "==============================================="
