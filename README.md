@@ -45,7 +45,6 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 ```
 
 [![🌿 Leaf](https://img.shields.io/badge/🌿-Leaf_Server_Download-green?style=for-the-badge)](https://www.leafmc.one/en/download/1.21.11)
-
 [![📃 Paper](https://img.shields.io/badge/📃-Paper_Server_Download-yellow?style=for-the-badge)](https://fill-ui.papermc.io/projects/paper)
 
 ---
