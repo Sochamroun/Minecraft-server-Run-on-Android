@@ -59,7 +59,7 @@ URL="https://github.com/Winds-Studio/Leaf/releases/download/ver-$VERSION/$JAR_NA
 echo "🍃 Leaf Version: $VERSION"
 echo "🔢 Build: #$BUILD"
 echo "📦 JAR: $JAR_NAME"
-echo "🔗 URL: $URL"
+echo "📂 Download URL: $URL"
 
 wget -O server.jar "$URL"
 
