@@ -184,7 +184,7 @@ finally:
 
 echo ""
 echo "==============================================="
-echo " 🍃 Leaf Minecraft Server"
+echo " 🥱 vanilla Minecraft Server"
 echo "==============================================="
 
 if [ -n "\$ip_address" ] && [ "\$ip_address" != "IP_NOT_FOUND" ]; then
