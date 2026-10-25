@@ -56,7 +56,9 @@ JAR_NAME="leaf-$VERSION-$BUILD.jar"
 
 URL="https://github.com/Winds-Studio/Leaf/releases/download/ver-$VERSION/$JAR_NAME"
 
-echo "🍃 Leaf Version: $VERSION"
+echo ""    
+echo "✅ Leaf build found!"
+echo "📦 Minecraft Version: $VERSION"
 echo "🔢 Build: #$BUILD"
 echo "📦 JAR: $JAR_NAME"
 echo "📂 Download URL: $URL"
