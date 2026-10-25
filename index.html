@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0d1117">
+<title>Minecraft Server Run on Android</title>
+<style>
+:root{color-scheme:dark;--bg:#0d1117;--panel:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--green:#35b653}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+.hero{padding:64px 24px 48px;text-align:center;background:radial-gradient(ellipse at 25% 10%,#1b2938 0%,#111a20 48%,#0d1117 100%);border-top:3px solid #30363d;border-bottom:1px solid #242b33}
+h1{margin:0;font-size:clamp(1.8rem,4.5vw,3rem);line-height:1.25;letter-spacing:-.035em;background:linear-gradient(90deg,#3fc46b,#55b7d9);color:transparent;background-clip:text;-webkit-background-clip:text}
+.leaf{margin-right:12px}
+.intro{max-width:1000px;margin:24px auto 28px;color:#9aa4af;font-size:clamp(.98rem,1.7vw,1.2rem)}
+.tags{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:34px}
+.tag{border:1px solid var(--border);border-radius:30px;padding:5px 14px;color:#9da7b2;background:#10151a;font-size:.9rem}
+.actions{display:flex;justify-content:center;flex-wrap:wrap;gap:14px}
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;border:1px solid var(--border);color:var(--text);background:#141a21;text-decoration:none;font-weight:700;font-size:1rem;transition:transform .15s,border-color .15s}
+.btn:hover{transform:translateY(-2px);border-color:#65717e}
+.btn.primary{background:var(--green);border-color:var(--green);color:white}
+nav{position:sticky;top:0;z-index:5;background:#0b0f15ed;backdrop-filter:blur(12px);border-bottom:1px solid #242b33}
+.nav-inner{max-width:1400px;margin:auto;padding:10px 22px;display:flex;gap:7px;overflow-x:auto}
+.nav-item{flex:0 0 auto;border:0;border-radius:8px;padding:10px 15px;background:transparent;color:#9aa4af;font:inherit;cursor:pointer}
+.nav-item.active,.nav-item:hover{background:#171d25;color:var(--text)}
+main{max-width:1400px;margin:auto;padding:48px 36px 60px}
+h2{font-size:clamp(1.5rem,2.5vw,2rem);margin:0;padding-bottom:16px;border-bottom:1px solid var(--border);letter-spacing:-.025em}
+.lead{margin:12px 0 30px;color:var(--muted);font-size:clamp(1rem,1.7vw,1.2rem)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{min-width:0;background:var(--panel);border:1px solid #30363d;border-radius:14px;padding:22px 24px;min-height:145px;box-shadow:0 2px 5px #00000012}
+.card h3{margin:0 0 12px;font-size:clamp(1rem,1.5vw,1.2rem)}
+.card p{margin:0;color:var(--muted);font-size:clamp(.95rem,1.4vw,1.08rem)}
+footer{margin-top:38px;padding-top:22px;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.9rem}
+footer a{color:#58a6ff;text-decoration:none}
+#toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,12px);opacity:0;background:#238636;color:#fff;padding:8px 14px;border-radius:8px;transition:.2s;pointer-events:none}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:800px){.hero{padding:48px 20px 38px}main{padding:34px 20px 45px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{padding:18px}}
+@media(max-width:540px){.cards{grid-template-columns:1fr}.card{min-height:auto}.hero{padding:40px 16px 32px}.tag{font-size:.8rem}.nav-inner{padding:8px 10px}.nav-item{padding:8px 12px;font-size:.9rem}main{padding:28px 16px 38px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <h1><span class="leaf">🌿</span>Minecraft Server Run on Android</h1>
+  <p class="intro">An open-source toolkit for running Minecraft Java Servers on Android with Termux. Simplifies installation, configuration, optimization, plugins, and public connectivity via Playit.gg.</p>
+  <div class="tags" aria-label="Project features">
+    <span class="tag">🟢 Open Source</span><span class="tag">📱 Android</span><span class="tag">🖥️ Termux</span><span class="tag">🎮 Java Edition</span><span class="tag">🌐 Playit.gg</span>
+  </div>
+  <div class="actions">
+    <a class="btn primary" href="https://github.com/Sochamroun/Minecraft-server-Run-on-Android" target="_blank" rel="noopener noreferrer">⭐ View on GitHub</a>
+    <a class="btn" href="#overview">Get Started</a>
+  </div>
+</header>
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <button class="nav-item active" data-target="overview">Overview</button>
+    <button class="nav-item" data-target="overview">Installation</button>
+    <button class="nav-item" data-target="overview">Servers</button>
+    <button class="nav-item" data-target="overview">Plugins</button>
+    <button class="nav-item" data-target="overview">Bot</button>
+    <button class="nav-item" data-target="overview">Tunnel</button>
+    <button class="nav-item" data-target="overview">Commands</button>
+    <button class="nav-item" data-target="overview">Extras</button>
+  </div>
+</nav>
+<main>
+  <section id="overview">
+    <h2>📖 Overview</h2>
+    <p class="lead">Run a full Minecraft Java server directly from your Android phone — no PC required.</p>
+    <div class="cards">
+      <article class="card"><h3>📱 Requirements</h3><p>An Android device with Termux installed.<br>No root required.</p></article>
+      <article class="card"><h3>🎮 Multiple Server Types</h3><p>Paper, Vanilla, and Leaf server scripts are supported.</p></article>
+      <article class="card"><h3>⚡ Optimization</h3><p>Mobile-friendly settings to help performance on phone hardware.</p></article>
+      <article class="card"><h3>🌐 Public Access</h3><p>Share your server with friends using a Playit.gg tunnel.</p></article>
+      <article class="card"><h3>🤖 Mineflayer Bot</h3><p>Set up a bot to join and help keep your world active.</p></article>
+      <article class="card"><h3>🧩 Plugin Support</h3><p>Install supported Paper plugins with simple terminal commands.</p></article>
+    </div>
+  </section>
+  <footer>
+    <p>Minecraft Server Run on Android · Termux</p>
+    <a href="https://github.com/Sochamroun/Minecraft-server-Run-on-Android" target="_blank" rel="noopener noreferrer">View source repository on GitHub ↗</a>
+  </footer>
+</main>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+const navButtons = document.querySelectorAll('.nav-item');
+const toast = document.getElementById('toast');
+let toastTimer;
+navButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    navButtons.forEach(item => item.classList.remove('active'));
+    button.classList.add('active');
+    document.getElementById(button.dataset.target).scrollIntoView({behavior:'smooth'});
+    toast.textContent = button.textContent + ' — only Overview is included in this version';
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 1800);
+  });
+});
+</script>
+</body>
+</html>
