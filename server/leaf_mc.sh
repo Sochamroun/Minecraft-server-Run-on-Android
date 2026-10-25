@@ -263,24 +263,52 @@ echo "==============================================="
 echo " ⚡ Server Shortcut"
 echo "==============================================="
 
-cat > ~/$SERVERNAME.sh <<EOF
+cat > "$HOME/$SERVERNAME.sh" <<EOF
 #!/data/data/com.termux/files/usr/bin/bash
 
-ip_address=\$(ip -4 addr show wlan0 | grep -oP 'inet \K[\d.]+')
+SERVER_PORT="$SERVER_PORT"
+SERVER_DIR="\$HOME/$SERVERNAME"
 
+# Detect local IPv4 using Python
+ip_address=\$(python -c '
+import socket
+
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+try:
+    s.connect(("8.8.8.8", 80))
+    ip = s.getsockname()[0]
+    if ip.startswith("127.") or ip == "0.0.0.0":
+        print("IP_NOT_FOUND")
+    else:
+        print(ip)
+except OSError:
+    print("IP_NOT_FOUND")
+finally:
+    s.close()
+' 2>/dev/null)
+
+echo ""
 echo "==============================================="
 echo " 🍃 Leaf Minecraft Server"
-echo "IPv4 Server Minecraft ✅: \$ip_address:$SERVER_PORT"
+echo "==============================================="
+
+if [ -n "\$ip_address" ] && [ "\$ip_address" != "IP_NOT_FOUND" ]; then
+    echo " Private IPv4 Server Minecraft: \$ip_address:\$SERVER_PORT"
+else
+    echo " ⚠️ Wi-Fi LAN IP not found"
+    echo " Check Wi-Fi connection."
+fi
+
 echo "==============================================="
 
 sleep 10
 
-cd ~/$SERVERNAME || exit
+cd "\$SERVER_DIR" || exit 1
 
 ./start.sh
 EOF
 
-chmod +x ~/$SERVERNAME.sh
+chmod +x "$HOME/$SERVERNAME.sh"
 
 echo ""
 echo "✅ Shortcut created"
