@@ -165,7 +165,7 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 <div align="center">
     <p><b> Prepared by Sochamroun </b></p>
     <p><b>If this project helps you, please give it a Stars ⭐</b></p>
-    <p><b>*Last updated: 7-10-2026 </b></p>
+    <p><b>*Last updated: 25-10-2026 </b></p>
 </div>
 
 ![Banner](https://github.com/Sochamroun/Minecraft-server-Run-on-Android/blob/f636e4fd005fe0ba0e667f50c1bb849908fdc95a/Gif/banner.png)
