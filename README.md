@@ -45,7 +45,7 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/leaf_mc.sh && chmod +x leaf_mc.sh
 ```
 ---
-## Change OpenJDK Runtime Environment Java 21 25
+## Change OpenJDK Runtime Java 21 25
 - Java 21 Runtime 
 ```bash
 export JAVA_HOME=$PREFIX/lib/jvm/java-21-openjdk
