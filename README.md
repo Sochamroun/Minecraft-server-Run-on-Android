@@ -45,6 +45,25 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/leaf_mc.sh && chmod +x leaf_mc.sh
 ```
 ---
+## Change OpenJDK Runtime Environment Java 21 25
+- Java 21 Runtime 
+```bash
+export JAVA_HOME=$PREFIX/lib/jvm/java-21-openjdk
+```
+- Java 25 Runtime
+```bash
+export JAVA_HOME=$PREFIX/lib/jvm/java-25-openjdk
+```
+- Export Java Path
+```bash
+export PATH=$JAVA_HOME/bin:$PATH
+```
+- Check Java Runtime
+```bash
+java -version
+```
+---
+
 ### Server Type Link Website Official 
 [![🌿 Leaf](https://img.shields.io/badge/🌿-Leaf_Server_Download-green?style=for-the-badge)](https://www.leafmc.one/en/download/1.21.11)
 
