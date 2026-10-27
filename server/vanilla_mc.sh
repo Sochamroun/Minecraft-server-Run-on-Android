@@ -15,9 +15,15 @@ mkdir -p ~/$SERVERNAME
 cd ~/$SERVERNAME || exit
 
 echo ""
-echo "Enter Minecraft version 🎲"
+echo "==============================================="
+echo " 🎲 Minecraft Version"
+echo "==============================================="
+
+echo ""
 echo "Example: 1.20.4 / 1.21.1"
-read VERSION
+echo ""
+
+read -p "Version: " VERSION
 
 MANIFEST="https://piston-meta.mojang.com/mc/game/version_manifest_v2.json"
 
