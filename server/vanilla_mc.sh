@@ -77,17 +77,33 @@ TIMEZONE=${TIMEZONE:-Asia/Phnom_Penh}
 echo ""
 echo "✅ TimeZone: $TIMEZONE"
 
-echo ""
-echo "==============================================="
-echo " ▶️ Creating Start Script"
-echo "==============================================="
+echo "Select Java Runtime:"
+echo "1) Java 21 1.20.5-1.21.11"
+echo "2) Java 25 26.x"
+read -rp "Choose [1-2]: " JAVA_CHOICE
+
+case "$JAVA_CHOICE" in
+    1) OPENJDK="java-21-openjdk" ;;
+    2) OPENJDK="java-25-openjdk" ;;
+    *)
+        echo "Invalid choice!"
+        exit 1
+        ;;
+esac
+
+JAVA="$PREFIX/lib/jvm/$OPENJDK/bin/java"
+
+if [ ! -x "$JAVA" ]; then
+    echo "Java runtime not installed: $JAVA"
+    exit 1
+fi
 
 cat > start.sh <<EOF
 #!/data/data/com.termux/files/usr/bin/bash
 
-export TZ=$TIMEZONE
+export TZ="$TIMEZONE"
 
-java -Xms$RAM -Xmx$RAM -jar server.jar nogui
+exec "$JAVA" -Xms$RAM -Xmx$RAM -jar server.jar nogui
 EOF
 
 chmod +x start.sh
@@ -96,13 +112,7 @@ echo ""
 echo "✅ start.sh created"
 
 echo ""
-echo "==============================================="
-echo " 🚀 Starting Paper First Time"
-echo "==============================================="
-
-echo ""
 echo "📝 Running server..."
-
 ./start.sh
 
 echo ""
