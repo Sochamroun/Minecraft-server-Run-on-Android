@@ -45,22 +45,9 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/leaf_mc.sh && chmod +x leaf_mc.sh
 ```
 ---
-## Change OpenJDK Runtime Java 21 25
-- Java 21 Runtime 
+## panel Server for private Ipv4
 ```bash
-export JAVA_HOME=$PREFIX/lib/jvm/java-21-openjdk
-```
-- Java 25 Runtime
-```bash
-export JAVA_HOME=$PREFIX/lib/jvm/java-25-openjdk
-```
-- Export Java Path
-```bash
-export PATH=$JAVA_HOME/bin:$PATH
-```
-- Check Java Runtime
-```bash
-java -version
+curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/panel.py && python panel.py
 ```
 ---
 
@@ -74,11 +61,6 @@ java -version
 
 [![⚙️plugins](https://img.shields.io/badge/⚙️-Plugins_Download_click_here-green?style=for-the-badge)](./Plugins)
 
----
-### panel Server for private Ipv4
-```bash
-curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/panel.py && python panel.py
-```
 ---
 ### auto install script bot 
 ```bash
