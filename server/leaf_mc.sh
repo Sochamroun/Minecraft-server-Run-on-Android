@@ -56,7 +56,7 @@ JAR_NAME="leaf-$VERSION-$BUILD.jar"
 
 URL="https://github.com/Winds-Studio/Leaf/releases/download/ver-$VERSION/$JAR_NAME"
 
-echo ""    
+echo ""
 echo "✅ Leaf build found!"
 echo "📦 Minecraft Version: $VERSION"
 echo "🔢 Build: #$BUILD"
@@ -105,11 +105,9 @@ read -p "TIMEZONE (default=Asia/Phnom_Penh): " TIMEZONE
 TIMEZONE=${TIMEZONE:-Asia/Phnom_Penh}
 
 echo ""
-echo "✅ TimeZone: $TIMEZONE"
-
 echo "Select Java Runtime:"
-echo "1) Java 21"
-echo "2) Java 25"
+echo "1) Java 21 1.20.5-1.21.11"
+echo "2) Java 25 26.x"
 read -rp "Choose [1-2]: " JAVA_CHOICE
 
 case "$JAVA_CHOICE" in
@@ -142,13 +140,7 @@ echo ""
 echo "✅ start.sh created"
 
 echo ""
-echo "==============================================="
-echo " 🚀 Starting First Time"
-echo "==============================================="
-
-echo ""
 echo "📝 Running server..."
-
 ./start.sh
 
 echo ""
