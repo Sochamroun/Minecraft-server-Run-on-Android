@@ -132,6 +132,7 @@ cat > start.sh <<EOF
 #!/data/data/com.termux/files/usr/bin/bash
 
 export TZ="$TIMEZONE"
+
 exec "$JAVA" -Xms$RAM -Xmx$RAM -jar server.jar nogui
 EOF
 
