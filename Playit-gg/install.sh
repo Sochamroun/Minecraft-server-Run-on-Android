@@ -6,23 +6,41 @@ yes | pkg install tur-repo -y
 yes | pkg install playit -y
 
 cat > ~/playit.sh <<'EOF'
-
 #!/data/data/com.termux/files/usr/bin/bash
 
 cd "$HOME" || exit 1
 
-# Start playit daemon in background (hidden)
-nohup ./playitd \
-    >/dev/null 2>&1 </dev/null &
+Check commands
 
+command -v playitd >/dev/null 2>&1 || {
+echo "Error: playitd command not found!"
+exit 1
+}
+
+command -v playit-cli >/dev/null 2>&1 || {
+echo "Error: playit-cli command not found!"
+exit 1
+}
+
+Start daemon silently in background
+
+nohup playitd >/dev/null 2>&1 </dev/null &
 PLAYIT_PID=$!
 
-echo "Playit background started (PID: $PLAYIT_PID)"
+echo "Playit daemon started (PID: $PLAYIT_PID)"
 sleep 2
 
-# Start CLI in foreground (visible)
+Check daemon
+
+if ! kill -0 "$PLAYIT_PID" 2>/dev/null; then
+echo "Error: playitd stopped unexpectedly!"
+exit 1
+fi
+
+Start CLI in foreground
+
 echo "Starting Playit CLI..."
-exec ./playit-cli
+exec playit-cli
 EOF
 
 chmod +x ~/playit.sh
