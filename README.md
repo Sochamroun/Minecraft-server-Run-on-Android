@@ -10,8 +10,12 @@
 | 🌐 Tunnel / Playit.gg | Ubuntu And Termux | 
 | ❓ Troubleshooting | |
 | 📞 Support telegram | @Sochamroun123 |
+
+<div align="center">
   
 [![🇰🇭Cambodia](https://img.shields.io/badge/🇰🇭-Cambodia-blue?style=for-the-badge)](https://github.com/Sochamroun/Minecraft-server-Run-on-Android/blob/f6bcb8f840125d0814ecc4d295cdef3a724f44e8/KHMER.md)
+
+</div>
 
 <img src="./Gif/ZinPromax.gif" width="100%" alt="ZinProMax">
 
