@@ -10,7 +10,7 @@ yes | pkg install proot-distro -y
 ```bash
 proot-distro install ubuntu
 ```
-### login To Ubuntu Server 
+### login To Ubuntu
 ```bash
 proot-distro login ubuntu
 ```
@@ -39,6 +39,10 @@ proot-distro login ubuntu
 * step 3 Run playit-cli-linux-aarch64
 ```bash
 ./playit-cli-linux-aarch64
+```
+## Script Start.sh
+```bash
+curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/Playit-gg/start.sh && chmod +x start.sh
 ```
 ### Note 
 * Claim Your key Agent Tunnel playit-gg
