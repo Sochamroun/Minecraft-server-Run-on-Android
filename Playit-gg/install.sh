@@ -10,8 +10,6 @@ cat > ~/playit.sh <<'EOF'
 
 cd "$HOME" || exit 1
 
-Check commands
-
 command -v playitd >/dev/null 2>&1 || {
 echo "Error: playitd command not found!"
 exit 1
@@ -22,22 +20,16 @@ echo "Error: playit-cli command not found!"
 exit 1
 }
 
-Start daemon silently in background
-
 nohup playitd >/dev/null 2>&1 </dev/null &
 PLAYIT_PID=$!
 
 echo "Playit daemon started (PID: $PLAYIT_PID)"
 sleep 2
 
-Check daemon
-
 if ! kill -0 "$PLAYIT_PID" 2>/dev/null; then
 echo "Error: playitd stopped unexpectedly!"
 exit 1
 fi
-
-Start CLI in foreground
 
 echo "Starting Playit CLI..."
 exec playit-cli
