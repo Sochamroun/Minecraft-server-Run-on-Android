@@ -8,31 +8,39 @@ yes | pkg install playit -y
 cat > ~/playit.sh <<'EOF'
 #!/data/data/com.termux/files/usr/bin/bash
 
-cd "$HOME" || exit 1
+PLAYIT_PID=""
 
-command -v playitd >/dev/null 2>&1 || {
-echo "Error: playitd command not found!"
-exit 1
+cleanup() {
+    trap - INT TERM EXIT
+
+    if [ -n "$PLAYIT_PID" ] && kill -0 "$PLAYIT_PID" 2>/dev/null; then
+        kill "$PLAYIT_PID" 2>/dev/null
+        wait "$PLAYIT_PID" 2>/dev/null
+    fi
 }
 
-command -v playit-cli >/dev/null 2>&1 || {
-echo "Error: playit-cli command not found!"
-exit 1
-}
+trap 'exit 130' INT
+trap 'exit 143' TERM
+trap cleanup EXIT
 
-nohup playitd >/dev/null 2>&1 </dev/null &
-PLAYIT_PID=$!
+# Reuse an existing daemon if one is running
+if pgrep -x playitd >/dev/null 2>&1; then
+    echo "Playit daemon is already running."
+else
+    playitd &
+    PLAYIT_PID=$!
+    sleep 2
 
-echo "Playit daemon started (PID: $PLAYIT_PID)"
-sleep 2
+    if ! kill -0 "$PLAYIT_PID" 2>/dev/null; then
+        echo "Error: playitd failed to start!"
+        exit 1
+    fi
 
-if ! kill -0 "$PLAYIT_PID" 2>/dev/null; then
-echo "Error: playitd stopped unexpectedly!"
-exit 1
+    echo "Playit daemon started (PID: $PLAYIT_PID)"
 fi
 
 echo "Starting Playit CLI..."
-exec playit-cli
+playit-cli
 EOF
 
 chmod +x ~/playit.sh
