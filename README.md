@@ -1,14 +1,15 @@
 # 🌿 Minecraft Server Run on Android
-* 📱 Requirements Android Device 
-* 🛠️ Installation
-* 🎮 Paper Server
-* 🎮 Vanilla Server
-* 🎮 Leaf Server 
-* 🤖 Mineflayer Bot
-* ⚡ Server Optimization
-* 🌐 Tunnel / Playit.gg
-* ❓ Troubleshooting
-* 📞 Support Facebook/telegram
+| 📱 Requirements | Android Device |
+|-----------------|----------------|
+| 🛠️ Installation | Java 21 25 |
+| 🎮 Paper Server | 1.12.x - 26.X |
+| 🎮 Vanilla Server | 1.12.x - 26.X |
+| 🎮 Leaf Server  | 1.12.x - 26.X |
+| 🤖 Mineflayer Bot | JavaScript Bot.js |
+| ⚡ Server Optimization | 🌿 Leaf 📜 Paper |
+| 🌐 Tunnel / Playit.gg | Ubuntu And Termux | 
+| ❓ Troubleshooting | |
+| 📞 Support telegram | @Sochamroun123 |
   
 [![🇰🇭Cambodia](https://img.shields.io/badge/🇰🇭-Cambodia-blue?style=for-the-badge)](https://github.com/Sochamroun/Minecraft-server-Run-on-Android/blob/f6bcb8f840125d0814ecc4d295cdef3a724f44e8/KHMER.md)
 
@@ -60,12 +61,12 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 
 [![playit-gg](https://img.shields.io/badge/🎲-Playit_gg_Download-orange?style=for-the-badge)](https://playit.gg/download/linux)
 
-## Install Ubuntu server To Run Playit-gg 
+## Playit-gg on Ubuntu 
 * vision v1.0.10
 
 [![🥱Playit-gg](https://img.shields.io/badge/🥱-Playit_gg_Cick_here-blue?style=for-the-badge)](https://github.com/Sochamroun/Minecraft-server-Run-on-Android/tree/main/Playit-gg)
 
-## Install Playit-gg On termux 
+## Playit-gg On termux 
 * vision v1.0.6
 ```bash
 curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/Playit-gg/install.sh | bash
