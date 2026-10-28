@@ -50,38 +50,16 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/panel.py && python panel.py
 ```
 ---
-
-### Server Type Link Website Official 
-[![🌿 Leaf](https://img.shields.io/badge/🌿-Leaf_Server_Download-green?style=for-the-badge)](https://www.leafmc.one/en/download/1.21.11)
-
-[![📃 Paper](https://img.shields.io/badge/📃-Paper_Server_Download-yellow?style=for-the-badge)](https://fill-ui.papermc.io/projects/paper)
-
----
 ## 🔌 plugins For Server 
 
 [![⚙️plugins](https://img.shields.io/badge/⚙️-Plugins_Download_click_here-green?style=for-the-badge)](./Plugins)
 
----
-### auto install script bot 
-```bash
-curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/NPC-MC.sh | bash
-```
-### note 
-* Ctrl + x and y "save and exit"
-* Ctrl + c "Close bot or stop bot Run"
 ---
 ## Playit-gg tunnel Minecraft server 
 * Free tunnel tcp server to public
 
 [![playit-gg](https://img.shields.io/badge/🎲-Playit_gg_Download-orange?style=for-the-badge)](https://playit.gg/download/linux)
 
-* playit-gg Plugins
-- cd `server folder`
-- cd `cd plugins`
-```bash
-curl -#LO https://github.com/playit-cloud/playit-minecraft-plugin/releases/latest/download/playit-minecraft-plugin.jar
-```
----
 ## Install Ubuntu server To Run Playit-gg 
 * vision v1.0.10
 
@@ -92,6 +70,21 @@ curl -#LO https://github.com/playit-cloud/playit-minecraft-plugin/releases/lates
 ```bash
 curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/Playit-gg/install.sh | bash
 ```
+---
+
+### Server Type Link Website Official 
+[![🌿 Leaf](https://img.shields.io/badge/🌿-Leaf_Server_Download-green?style=for-the-badge)](https://www.leafmc.one/en/download/1.21.11)
+
+[![📃 Paper](https://img.shields.io/badge/📃-Paper_Server_Download-yellow?style=for-the-badge)](https://fill-ui.papermc.io/projects/paper)
+
+---
+### auto install script bot 
+```bash
+curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/NPC-MC.sh | bash
+```
+### note 
+* Ctrl + x and y "save and exit"
+* Ctrl + c "Close bot or stop bot Run"
 ---
 
 ## How to use Termux 
