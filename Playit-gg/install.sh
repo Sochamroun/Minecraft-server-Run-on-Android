@@ -2,6 +2,7 @@
 
 echo "Install Playit-gg"
 
+yes | pkg install tur-repo -y 
 yes | pkg install playit -y
 
 cat > ~/playit.sh <<'EOF'
