@@ -5,11 +5,23 @@ echo "Install Playit-gg"
 yes | pkg install playit -y
 
 cat > ~/playit.sh <<'EOF'
+
 #!/data/data/com.termux/files/usr/bin/bash
 
-pgrep -x playitd >/dev/null || playitd &
+cd "$HOME" || exit 1
+
+# Start playit daemon in background (hidden)
+nohup ./playitd \
+    >/dev/null 2>&1 </dev/null &
+
+PLAYIT_PID=$!
+
+echo "Playit background started (PID: $PLAYIT_PID)"
 sleep 2
-exec playit-cli
+
+# Start CLI in foreground (visible)
+echo "Starting Playit CLI..."
+exec ./playit-cli
 EOF
 
 chmod +x ~/playit.sh
