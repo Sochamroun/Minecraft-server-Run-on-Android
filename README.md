@@ -54,7 +54,7 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 * Java Runtime Selector
 * `java 21 or java 25`
 ```bash
-curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/Java_Runime.sh && Java_Runtime.sh
+curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/Java_Runime.sh && chmod +x Java_Runime.sh && bash Java_Runime.sh
 ```
 ## panel Server for private Ipv4
 ```bash
