@@ -50,6 +50,12 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/leaf_mc.sh && chmod +x leaf_mc.sh
 ```
 ---
+## Java Runtime New Update 
+* Java Runtime Selector
+* `java 21 or java 25`
+```bash
+curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/Java_Runime.sh && Java_Runtime.sh
+```
 ## panel Server for private Ipv4
 ```bash
 curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/panel.py && python panel.py
