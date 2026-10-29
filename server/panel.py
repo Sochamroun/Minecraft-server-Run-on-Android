@@ -203,33 +203,78 @@ PAGE = r'''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport
 *{box-sizing:border-box}body{margin:0;background:#0b1220;color:#e8effa;font:15px system-ui}main{max-width:1050px;margin:auto;padding:18px}
 .card{background:#121c2e;border:1px solid #26344b;border-radius:14px;padding:16px;margin:12px 0}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .stat{font-size:24px;font-weight:bold;margin:7px 0}.muted{color:#9aabc2;font-size:13px}h1{font-size:24px}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-button,input{border:1px solid #34445e;border-radius:8px;padding:10px;background:#0b1424;color:#fff;font:inherit}button{cursor:pointer}.go{background:#126b4c}.stop{background:#77283a}.blue{background:#173e70}
+button,input,select,textarea{border:1px solid #34445e;border-radius:8px;padding:10px;background:#0b1424;color:#fff;font:inherit}button{cursor:pointer}.go{background:#126b4c}.stop{background:#77283a}.blue{background:#173e70}
 pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#060b13;padding:12px;border-radius:9px;height:300px;overflow:auto;font:12px monospace}
-input{width:100%}.field{flex:1;min-width:170px}.folder{padding:10px;border:1px solid #26344b;border-radius:9px;margin-top:8px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+input,select,textarea{width:100%}.field{flex:1;min-width:170px}.folder{padding:10px;border:1px solid #26344b;border-radius:9px;margin-top:8px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.nav{display:flex;gap:8px;margin:16px 0}.nav button{flex:1}.nav button.active{background:#245b91;border-color:#4b8dcc}.view{display:none}.view.active{display:block}
+textarea#filecontent{min-height:58vh;resize:vertical;font:13px/1.5 monospace;white-space:pre;tab-size:4}
 @media(max-width:650px){.grid{grid-template-columns:repeat(2,1fr)}main{padding:10px}.stat{font-size:20px}}
 </style></head><body><main><h1>⛏ Minecraft Server Panel</h1><div class="muted">Termux • Wi-Fi LAN • Port 8080 • No password</div><div id="notice" class="muted"></div>
+<div class="nav"><button id="navdash" class="active" onclick="showView('dashboard')">Dashboard</button><button id="naveditor" onclick="showView('editor')">Configuration editor</button></div>
+<section id="dashboard" class="view active">
 <div class="grid"><div class="card"><div class="muted">STATUS</div><div id="state" class="stat">Offline</div></div><div class="card"><div class="muted">UPTIME</div><div id="up" class="stat">00:00:00</div></div><div class="card"><div class="muted">PLAYERS ONLINE</div><div id="players" class="stat">Unknown</div></div><div class="card"><div class="muted">JAVA RAM (RSS)</div><div id="ram" class="stat">Unknown</div><div class="muted">RAM used by Java • Free RAM: <span id="freeram">Unknown</span></div></div></div>
 <div class="card"><h3>Server Control</h3><div id="folderline" class="muted"></div><div class="row" style="margin-top:12px"><button class="go" onclick="act('start')">▶ Start</button><button class="blue" onclick="act('restart')">↻ Restart</button><button class="stop" onclick="act('stop')">■ Stop</button><button class="stop" onclick="act('force')">Force Stop</button></div><p class="muted">Start the server from this panel for console access. A server started elsewhere cannot have its stdin attached automatically.</p><div class="muted">Panel PID: <span id="pid">—</span> • Java PID: <span id="jpid">—</span></div></div>
-<div class="card"><h3>Existing Server Folder</h3><div class="muted">Detected folders inside ~/server</div><div class="row" style="margin:10px 0"><button class="blue" onclick="scan()">↻ Scan again</button></div><div id="folders"></div></div>
+<div class="card"><h3>Existing Server Folder</h3><div class="muted">Detected folders inside Termux home</div><div class="row" style="margin:10px 0"><button class="blue" onclick="scan()">↻ Scan again</button></div><div id="folders"></div></div>
 <div class="card"><h3>Server details</h3><div class="muted">Folder</div><div id="folder"></div><div class="muted" style="margin-top:8px">Server JAR</div><div id="jar"></div><div class="muted" style="margin-top:8px">Start script</div><div id="script"></div><div class="muted" style="margin-top:8px">Max heap (read from start.sh)</div><div id="heap"></div><p class="muted">The panel runs start.sh; it does not replace its Java flags. CPU and TPS are not displayed.</p></div>
-<div class="card"><h3>⚙ server.properties Settings</h3><p class="muted">Edit settings for the selected server. Save writes to server.properties; restart Minecraft for most changes to apply.</p><div class="row" style="margin:10px 0"><button class="blue" onclick="loadProperties()">↻ Load settings</button><button class="go" onclick="saveProperties()">Save settings</button></div><div id="propstatus" class="muted"></div><div id="properties"></div></div>
 <div class="card"><h3>Live Output / Web Console</h3><pre id="logs">Waiting for output…</pre><div class="row"><div class="field"><input id="cmd" placeholder="Minecraft command, e.g. list" onkeydown="if(event.key==='Enter')send()"></div><button class="go" onclick="send()">Send</button><button onclick="getlogs()">Refresh</button></div><p class="muted">Player count is read from logs/latest.log when available; joined/left messages update the count automatically.</p></div>
+</section>
+<section id="editor" class="view">
+<div class="card"><h3>Configuration editor</h3><p class="muted">Choose a file from the currently selected server folder. Files outside that folder cannot be opened or saved here.</p>
+<div class="muted">Selected server folder</div><div id="editorfolder" style="overflow-wrap:anywhere;margin:5px 0 12px"></div>
+<div class="row"><div class="field"><label class="muted" for="filelist">Select file</label><select id="filelist"><option value="">Loading files…</option></select></div><button class="blue" onclick="loadFileList()">↻ Refresh files</button><button class="blue" onclick="openSelectedFile()">Open file</button></div>
+<div id="filestatus" class="muted" style="margin:12px 0">Select a file to edit.</div>
+<textarea id="filecontent" spellcheck="false" placeholder="File content will appear here after you select and open a file."></textarea>
+<div class="row" style="margin-top:12px"><button class="go" onclick="saveFile()">Save file</button><span class="muted" id="openedpath"></span></div>
+</div></section>
 <p class="muted">No password is required. Use only on a trusted Wi-Fi network; do not expose port 8080 to the public internet.</p></main>
 <script>
-
+let selectedFile='';
 async function api(path,data){let r=await fetch(path,{method:data?'POST':'GET',headers:{'Content-Type':'application/json'},body:data?JSON.stringify(data):undefined});let d=await r.json();if(!r.ok)throw Error(d.error||'Request failed');return d}
 function note(t){document.getElementById('notice').textContent=t}
+function showView(which){document.querySelectorAll('.view').forEach(x=>x.classList.toggle('active',x.id===which));document.getElementById('navdash').classList.toggle('active',which==='dashboard');document.getElementById('naveditor').classList.toggle('active',which==='editor');if(which==='editor')loadFileList()}
 function fmt(n){return [Math.floor(n/3600),Math.floor(n%3600/60),n%60].map(x=>String(x).padStart(2,'0')).join(':')}
-async function refresh(){try{let d=await api('/api/status');state.textContent=d.state;up.textContent=fmt(d.uptime);players.textContent=d.players==null?'Unknown':(d.max_players==null?String(d.players):d.players+' / '+d.max_players);ram.textContent=d.ram==null?'Unknown':d.ram+' MB';freeram.textContent=d.free_ram==null?'Unknown':d.free_ram+' MB';pid.textContent=d.pid||'—';jpid.textContent=d.java_pid||'—';folderline.textContent=d.folder+' • '+d.jar;folder.textContent=d.folder;jar.textContent=d.jar;script.textContent=d.script;heap.textContent=d.heap;if(!document.getElementById('folders').dataset.loaded)renderFolders(d.folders)}catch(e){note(e.message)}}
-function renderFolders(items){let root=document.getElementById('folders');root.innerHTML='';root.dataset.loaded='1';if(!items.length){root.textContent='No valid server folder found. A folder must contain server.jar and start.sh.';return}for(let x of items){let div=document.createElement('div');div.className='folder';let info=document.createElement('div');let b=document.createElement('button');b.className='blue';b.textContent='Use server';info.textContent=x.path+' [server.jar] [start.sh]';b.onclick=async()=>{try{let d=await api('/api/select',{path:x.path,jar:'server.jar'});note(d.message);root.dataset.loaded='';refresh();loadProperties()}catch(e){note(e.message)}};div.append(info,b);root.append(div)}}
+async function refresh(){try{let d=await api('/api/status');state.textContent=d.state;up.textContent=fmt(d.uptime);players.textContent=d.players==null?'Unknown':(d.max_players==null?String(d.players):d.players+' / '+d.max_players);ram.textContent=d.ram==null?'Unknown':d.ram+' MB';freeram.textContent=d.free_ram==null?'Unknown':d.free_ram+' MB';pid.textContent=d.pid||'—';jpid.textContent=d.java_pid||'—';folderline.textContent=d.folder+' • '+d.jar;folder.textContent=d.folder;jar.textContent=d.jar;script.textContent=d.script;heap.textContent=d.heap;editorfolder.textContent=d.folder;if(!document.getElementById('folders').dataset.loaded)renderFolders(d.folders)}catch(e){note(e.message)}}
+function renderFolders(items){let root=document.getElementById('folders');root.innerHTML='';root.dataset.loaded='1';if(!items.length){root.textContent='No valid server folder found. A folder must contain server.jar and start.sh.';return}for(let x of items){let div=document.createElement('div');div.className='folder';let info=document.createElement('div');let b=document.createElement('button');b.className='blue';b.textContent='Use server';info.textContent=x.path+' [server.jar] [start.sh]';b.onclick=async()=>{try{let d=await api('/api/select',{path:x.path,jar:'server.jar'});note(d.message);root.dataset.loaded='';selectedFile='';document.getElementById('filecontent').value='';document.getElementById('openedpath').textContent='';refresh();loadFileList()}catch(e){note(e.message)}};div.append(info,b);root.append(div)}}
 async function act(a){if(a==='restart'&&!confirm('Restart Minecraft server?'))return;try{let d=await api('/api/'+a,{});note(d.message);setTimeout(refresh,500)}catch(e){note(e.message)}}
 async function send(){let el=document.getElementById('cmd'),c=el.value.trim();if(!c)return;try{let d=await api('/api/command',{command:c});note(d.message);el.value='';getlogs()}catch(e){note(e.message)}}
 async function scan(){try{let d=await api('/api/scan');renderFolders(d.folders);note('Scan complete')}catch(e){note(e.message)}}
 async function getlogs(){try{let d=await api('/api/logs');logs.textContent=d.logs.join('\n')||'No output yet';logs.scrollTop=logs.scrollHeight}catch(e){note(e.message)}}
-async function loadProperties(){try{let d=await api('/api/properties');let root=document.getElementById('properties');root.textContent='';for(let item of d.properties){let row=document.createElement('div');row.className='folder';row.style.alignItems='center';let label=document.createElement('label');label.style.flex='1';label.style.minWidth='180px';label.textContent=item.key;let input=document.createElement('input');input.style.flex='2';input.style.minWidth='180px';input.dataset.key=item.key;input.value=item.value;input.autocomplete='off';row.append(label,input);root.append(row)}document.getElementById('propstatus').textContent='Loaded '+d.properties.length+' properties from '+d.path}catch(e){document.getElementById('propstatus').textContent=e.message}}
-async function saveProperties(){let values={};document.querySelectorAll('#properties input[data-key]').forEach(el=>values[el.dataset.key]=el.value);try{let d=await api('/api/properties',{values});document.getElementById('propstatus').textContent=d.message}catch(e){document.getElementById('propstatus').textContent=e.message}}
-refresh();getlogs();loadProperties();setInterval(refresh,2000);setInterval(getlogs,1800);
+async function loadFileList(){try{let d=await api('/api/files');let s=document.getElementById('filelist');s.innerHTML='';if(!d.files.length){s.add(new Option('No files found in selected server folder',''));}else{for(let f of d.files)s.add(new Option(f,f));}document.getElementById('editorfolder').textContent=d.folder;document.getElementById('filestatus').textContent='Found '+d.files.length+' file(s). Select a file and press Open file.';if(selectedFile&&d.files.includes(selectedFile))s.value=selectedFile;else selectedFile='';}catch(e){document.getElementById('filestatus').textContent=e.message}}
+async function openSelectedFile(){let path=document.getElementById('filelist').value;if(!path){document.getElementById('filestatus').textContent='Select a file first.';return}try{let d=await api('/api/file?path='+encodeURIComponent(path));selectedFile=d.path;document.getElementById('filecontent').value=d.content;document.getElementById('openedpath').textContent=d.path;document.getElementById('filestatus').textContent='Opened '+d.path+' ('+d.size+' bytes)';}catch(e){document.getElementById('filestatus').textContent=e.message}}
+async function saveFile(){if(!selectedFile){document.getElementById('filestatus').textContent='Open a file before saving.';return}if(!confirm('Save changes to '+selectedFile+'?'))return;try{let d=await api('/api/file',{path:selectedFile,content:document.getElementById('filecontent').value});document.getElementById('filestatus').textContent=d.message;}catch(e){document.getElementById('filestatus').textContent=e.message}}
+refresh();getlogs();setInterval(refresh,2000);setInterval(getlogs,1800);
 </script></body></html>'''
+
+
+def safe_selected_file(relative):
+    """Resolve an existing file strictly inside the selected server directory."""
+    if not isinstance(relative, str) or not relative or Path(relative).is_absolute():
+        raise ValueError("Choose a file from the selected server folder.")
+    candidate = (folder / relative).resolve(strict=True)
+    try:
+        candidate.relative_to(folder.resolve())
+    except ValueError:
+        raise ValueError("Files outside the selected server folder are not allowed.")
+    if not candidate.is_file():
+        raise ValueError("Selected path is not a file.")
+    return candidate
+
+def list_server_files():
+    found = []
+    excluded = {".git", "libraries", "node_modules", ".gradle", ".cache"}
+    for current, dirs, files in os.walk(folder, followlinks=False):
+        base = Path(current)
+        dirs[:] = [d for d in dirs if d not in excluded and not (base / d).is_symlink()]
+        for name in files:
+            candidate = base / name
+            try:
+                resolved = candidate.resolve(strict=True)
+                resolved.relative_to(folder.resolve())
+                if resolved.is_file():
+                    found.append(resolved.relative_to(folder.resolve()).as_posix())
+            except (OSError, ValueError):
+                continue
+    return sorted(set(found))
 
 class Handler(BaseHTTPRequestHandler):
     def log_message(self, *args): pass
@@ -241,56 +286,44 @@ class Handler(BaseHTTPRequestHandler):
         path=urlparse(self.path).path
         if path=="/":
             b=PAGE.encode(); self.send_response(200); self.send_header("Content-Type","text/html; charset=utf-8"); self.send_header("Content-Length",str(len(b))); self.end_headers(); self.wfile.write(b); return
-        if path=="/api/properties":
-            propfile = folder / "server.properties"
-            if not propfile.is_file(): self.reply({"error":"server.properties not found in selected folder."},404); return
+        if path=="/api/files":
+            if not valid_server_folder(folder): self.reply({"error":"Select a valid server folder first."},409); return
+            self.reply({"folder":str(folder),"files":list_server_files()})
+        elif path=="/api/file":
             try:
-                props=[]
-                for line in propfile.read_text(encoding="utf-8", errors="replace").splitlines():
-                    stripped=line.strip()
-                    if not stripped or stripped.startswith("#") or "=" not in line: continue
-                    key,value=line.split("=",1); props.append({"key":key.strip(),"value":value})
-                self.reply({"path":str(propfile),"properties":props})
-            except OSError as e: self.reply({"error":str(e)},500)
+                relative=parse_qs(urlparse(self.path).query).get("path",[""])[0]
+                target=safe_selected_file(relative)
+                if target.stat().st_size > 2 * 1024 * 1024: self.reply({"error":"File is larger than the 2 MB editor limit."},413); return
+                content=target.read_bytes()
+                if b"\\0" in content: self.reply({"error":"Binary files cannot be edited in the text editor."},415); return
+                self.reply({"path":target.relative_to(folder).as_posix(),"content":content.decode("utf-8"),"size":len(content)})
+            except UnicodeDecodeError: self.reply({"error":"This file is not valid UTF-8 text."},415)
+            except (OSError, ValueError) as e: self.reply({"error":str(e)},400)
         elif path=="/api/status": self.reply(status())
         elif path=="/api/logs":
             with lock: self.reply({"logs":list(logs)})
         elif path=="/api/scan": self.reply({"folders":scan()})
         else: self.reply({"error":"Not found"},404)
     def do_POST(self):
-        try: data=json.loads(self.rfile.read(min(int(self.headers.get("Content-Length","0")),20000)) or b"{}")
+        try: data=json.loads(self.rfile.read(min(int(self.headers.get("Content-Length","0")),3 * 1024 * 1024)) or b"{}")
         except Exception: data={}
         path=urlparse(self.path).path
-        if path=="/api/properties":
-            propfile=folder / "server.properties"
-            if not propfile.is_file(): self.reply({"error":"server.properties not found in selected folder."},404); return
-            values=data.get("values")
-            if not isinstance(values,dict): self.reply({"error":"Invalid settings payload."},400); return
+        if path=="/api/file":
             try:
-                lines=propfile.read_text(encoding="utf-8",errors="replace").splitlines(keepends=True)
-                updated=set(); out=[]
-                for line in lines:
-                    bare=line.rstrip("\r\n")
-                    if bare.strip() and not bare.lstrip().startswith("#") and "=" in bare:
-                        key=bare.split("=",1)[0].strip()
-                        if key in values:
-                            value=str(values[key])
-                            if "\n" in value or "\r" in value: self.reply({"error":"Setting values cannot contain new lines."},400); return
-                            ending="\r\n" if line.endswith("\r\n") else ("\n" if line.endswith("\n") else "")
-                            out.append(key+"="+value+ending); updated.add(key); continue
-                    out.append(line)
-                for key,value in values.items():
-                    key=str(key)
-                    if not re.fullmatch(r"[A-Za-z0-9_.-]+",key): self.reply({"error":"Invalid property key."},400); return
-                    if key not in updated:
-                        value=str(value)
-                        if "\n" in value or "\r" in value: self.reply({"error":"Setting values cannot contain new lines."},400); return
-                        out.append(key+"="+value+"\n")
-                temp=propfile.with_name("server.properties.panel-tmp")
-                temp.write_text("".join(out),encoding="utf-8"); os.replace(temp,propfile)
-                addlog("Updated server.properties from panel.")
-                self.reply({"ok":True,"message":"Saved server.properties successfully. Restart Minecraft to apply most changes."})
-            except OSError as e: self.reply({"error":str(e)},500)
+                relative=data.get("path")
+                content=data.get("content")
+                if not isinstance(content,str): self.reply({"error":"File content must be text."},400); return
+                if len(content.encode("utf-8")) > 2 * 1024 * 1024: self.reply({"error":"File exceeds the 2 MB editor limit."},413); return
+                target=safe_selected_file(relative)
+                mode=target.stat().st_mode
+                temp=target.with_name(target.name+".panel-tmp")
+                temp.write_text(content,encoding="utf-8",newline="")
+                os.chmod(temp,mode)
+                os.replace(temp,target)
+                addlog("Edited file from Configuration editor: "+target.relative_to(folder).as_posix())
+                self.reply({"ok":True,"message":"Saved "+target.relative_to(folder).as_posix()})
+            except (OSError, ValueError) as e:
+                self.reply({"error":str(e)},400)
         elif path=="/api/start":
             ok,msg=start(); self.reply({"ok":ok,"message":msg},200 if ok else 409)
         elif path=="/api/stop":
