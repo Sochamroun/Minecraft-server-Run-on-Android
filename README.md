@@ -114,6 +114,10 @@ curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-An
 | pkg install | packages | 
 
 ---
+## Minecraft server Setup All in One 
+```bash
+curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/setup.sh | bash
+```
 
 <div align="center">
   
