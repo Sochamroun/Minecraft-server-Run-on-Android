@@ -14,8 +14,4 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 
 curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/panel.py
 
-yes | pkg install proot-distro -y
-
-proot-distro install ubuntu
-
 echo " All in One "
