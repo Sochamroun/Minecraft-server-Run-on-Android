@@ -40,9 +40,9 @@ proot-distro login ubuntu
 ```bash
 ./playit-cli-linux-aarch64
 ```
-## Script Start.sh
+## Script Setup On Ubuntu Easy Use
 ```bash
-curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/Playit-gg/start.sh && chmod +x start.sh
+curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/Playit-gg/setup.sh | bash 
 ```
 ### Note 
 * Claim Your key Agent Tunnel playit-gg
