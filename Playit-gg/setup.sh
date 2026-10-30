@@ -35,3 +35,8 @@ sleep 2
 echo "Starting Playit CLI..."
 exec ./playit-cli-linux-aarch64
 EOF
+
+chmod +x start.sh
+
+echo "Run Command"
+echo "./start.sh"
