@@ -2,7 +2,7 @@
 
 apt update && apt upgrade -y 
 
-curl -#LO https://github.com/playit-cloud/playit-agent/releases/download/v1.0.10/playit-cli-linux-aarch64 && chmod +x playit-cli-linux-aarch64 
+curl -#LO https://github.com/playit-cloud/playit-agent/releases/download/v1.0.10/playit-linux-aarch64 && chmod +x playit-linux-aarch64
 
 curl -#LO https://github.com/playit-cloud/playit-agent/releases/download/v1.0.10/playit-cli-linux-aarch64 && chmod +x playit-cli-linux-aarch64
 
