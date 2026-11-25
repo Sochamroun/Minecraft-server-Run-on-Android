@@ -5,6 +5,8 @@
 | 🎮 Paper Server | 1.12.x - 26.X |
 | 🎮 Vanilla Server | 1.12.x - 26.X |
 | 🎮 Leaf Server  | 1.12.x - 26.X |
+| 🎁 Script Install | setup.sh |
+| 📁 panel | Install Plugins |
 | 🤖 Mineflayer Bot | JavaScript Bot.js |
 | ⚡ Server Optimization | 🌿 Leaf 📜 Paper |
 | 🌐 Tunnel / Playit.gg | Ubuntu And Termux | 
