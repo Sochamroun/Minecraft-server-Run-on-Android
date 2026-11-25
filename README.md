@@ -96,7 +96,7 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 [![📃 Paper](https://img.shields.io/badge/📃-Paper_Server_Download-yellow?style=for-the-badge)](https://fill-ui.papermc.io/projects/paper)
 
 ---
-### Install script bot 
+### Install bot 
 ```bash
 curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/bot-setup.sh | bash
 ```
