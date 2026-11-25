@@ -98,7 +98,7 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 ---
 ### Install script bot 
 ```bash
-curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/NPC-MC.sh | bash
+curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/bot-setup.sh | bash
 ```
 ### note 
 * Ctrl + x and y "save and exit"
