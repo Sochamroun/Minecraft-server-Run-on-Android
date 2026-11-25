@@ -3,6 +3,7 @@
 curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/Install.sh | bash
 
 yes | pkg install openjdk-21 openjdk-25 -y
+yes | pkg install proot-distro -y && proot-distro install ubuntu
 
 curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/paper_mc.sh && chmod +x paper_mc.sh
 
