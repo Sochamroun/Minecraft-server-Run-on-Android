@@ -42,12 +42,12 @@ A lightweight server management toolkit powered by Termux.
 * Supported Java runtime (Java 21 or 25)
 * Available storage and sufficient memory for your
 
-## Update and upgrade Termux 
+## ⚙️ Update and upgrade Termux 
 ```bash
 curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/Install.sh | bash
 ```
 ---
-## Download Script Install Server 
+## 📥 Download Script Install Server 
 * Install Java 21 25
 ```bash
 yes | pkg install openjdk-21 openjdk-25 -y
@@ -65,25 +65,25 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/leaf_mc.sh && chmod +x leaf_mc.sh
 ```
 ---
-## Java Runtime 
+## ☕ Java Runtime 
 * Java Runtime Selector
 * `java 21 or java 25`
 ```bash
 curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/Java_Runime.sh && chmod +x Java_Runime.sh && bash Java_Runime.sh
 ```
-## panel Server for private Ipv4
+## 🌐 Panel Server for private Ipv4
 ```bash
 curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/panel.py && python panel.py
 ```
 ---
 
 ---
-## Playit-gg tunnel Minecraft server 
+## 🌏 Playit-gg tunnel Minecraft server 
 * Free tunnel tcp server to public
 
 [![playit-gg](https://img.shields.io/badge/🎲-Playit_gg_Download-orange?style=for-the-badge)](https://playit.gg/download/linux)
 
-## Playit-gg on Ubuntu 
+## 🐧 Playit-gg on Ubuntu 
 * vision v1.0.10
 
 [![🥱Playit-gg](https://img.shields.io/badge/🥱-Playit_gg_Cick_here-blue?style=for-the-badge)](https://github.com/Sochamroun/Minecraft-server-Run-on-Android/tree/main/Playit-gg)
