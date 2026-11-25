@@ -1,17 +1,22 @@
 # 🌿 Minecraft Server Run on Android
-| 📱 Requirements | Android Device |
+Run Your Own Minecraft Java Server Directly on Android! 
+A lightweight server management toolkit powered by Termux. 
+| ✨ Features | 🔥 Tools |
 |-----------------|----------------|
-| 🛠️ Installation | Java 21 25 |
-| 🎮 Paper Server | 1.12.x - 26.X |
-| 🎮 Vanilla Server | 1.12.x - 26.X |
-| 🎮 Leaf Server  | 1.12.x - 26.X |
-| 🎁 Script Install | setup.sh |
-| 📁 panel | Install Plugins |
-| 🤖 Mineflayer Bot | JavaScript Bot.js |
-| ⚡ Server Optimization | 🌿 Leaf 📜 Paper |
-| 🌐 Tunnel / Playit.gg | Ubuntu And Termux | 
-| ❓ Troubleshooting | |
-| 📞 Support telegram | @Sochamroun123 |
+| 📱 Platform | Android devices with Termux |
+| 🛠️ Installation | Automated installation scripts | 
+| ☕ Java Runtime | Java 21 & Java 25 |
+| 📜 Paper Server | 1.12.x - 26.X |
+| 🥱 Vanilla Server | 1.12.x - 26.X |
+| 🌿 Leaf Server  | 1.12.x - 26.X |
+| 🖥️ Web Panel | Browser-based server management |
+| 📁 Panel | Install Plugins |
+| 🤖 Mineflayer Bot | JavaScript-based Minecraft bot |
+| ⚡ Optimization | 🌿 Leaf 📜 Paper |
+| 🌐 Network Tunnel | Playit.gg integration |
+| 🐧 Linux Support | Ubuntu & Termux |
+| 🔧 Troubleshooting | Common issues and solutions |
+|💬 Community Support | Telegram: @Sochamroun123 |
 
 <div align="center">
   
@@ -28,6 +33,14 @@
 [![📁 Material_Files](https://img.shields.io/badge/📁-Material_Files_Download_click_here-blue?style=for-the-badge)](https://play.google.com/store/apps/details?id=me.zhanghai.android.files)
 
 </div>
+
+## 📋 Requirements
+* Android device
+* Termux
+* Material_Files
+* Internet connection for installation and downloads
+* Supported Java runtime (Java 21 or 25)
+* Available storage and sufficient memory for your
 
 ## Update and upgrade Termux 
 ```bash
@@ -52,7 +65,7 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/leaf_mc.sh && chmod +x leaf_mc.sh
 ```
 ---
-## Java Runtime New Update 
+## Java Runtime 
 * Java Runtime Selector
 * `java 21 or java 25`
 ```bash
@@ -63,9 +76,6 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/server/panel.py && python panel.py
 ```
 ---
-## 🔌 plugins For Server 
-
-[![⚙️plugins](https://img.shields.io/badge/⚙️-Plugins_Download_click_here-green?style=for-the-badge)](./Plugins)
 
 ---
 ## Playit-gg tunnel Minecraft server 
@@ -78,11 +88,6 @@ curl -#LO https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-A
 
 [![🥱Playit-gg](https://img.shields.io/badge/🥱-Playit_gg_Cick_here-blue?style=for-the-badge)](https://github.com/Sochamroun/Minecraft-server-Run-on-Android/tree/main/Playit-gg)
 
-## Playit-gg On termux 
-* vision v1.0.6
-```bash
-curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/Playit-gg/install.sh | bash
-```
 ---
 
 ### Server Type Link Website Official 
@@ -91,7 +96,7 @@ curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-An
 [![📃 Paper](https://img.shields.io/badge/📃-Paper_Server_Download-yellow?style=for-the-badge)](https://fill-ui.papermc.io/projects/paper)
 
 ---
-### auto install script bot 
+### Install script bot 
 ```bash
 curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/NPC-MC.sh | bash
 ```
@@ -116,6 +121,24 @@ curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-An
 | pkg install | packages | 
 
 ---
+## 🔧 Troubleshooting
+| Problem	| Suggested Solution | 
+|---------|--------------------|
+| Java not found | Check Java installation and PATH |
+| Server fails to start |	Check server.properties and console logs |
+| Out of memory |	Adjust Java heap allocation |
+| Cannot connect locally | Check Wi-Fi and server port |
+| Tunnel not connecting |	Check Playit.gg configuration |
+| Plugin errors | Verify Minecraft and plugin compatibility |
+--- 
+## 📞 Support & Community
+* Need help or want to report a problem?
+* Telegram: @Sochamroun123
+* GitHub Issues: Report a Bug / Request a Feature
+## 📜 License
+* This project is licensed under the Apache License 2.0.
+* See LICENSE for details
+---
 ## Minecraft server Setup All in One 
 ```bash
 curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-Android/refs/heads/main/setup.sh | bash
@@ -129,9 +152,9 @@ curl -sL https://raw.githubusercontent.com/Sochamroun/Minecraft-server-Run-on-An
 
 </div>
 <div align="center">
-    <p><b> Prepared by Sochamroun </b></p>
+    <p><b> Developed by Sochamroeun </b></p>
     <p><b>If this project helps you, please give it a Stars ⭐</b></p>
-    <p><b>*Last updated: 25-10-2026 </b></p>
+    <p><b>Last updated: 25-11-2026 </b></p>
 </div>
 
 ![Banner](https://github.com/Sochamroun/Minecraft-server-Run-on-Android/blob/f636e4fd005fe0ba0e667f50c1bb849908fdc95a/Gif/banner.png)
